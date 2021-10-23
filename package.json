@@ -1,0 +1,17 @@
+{
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "Music player with a different proposal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Media",
+    "Player",
+    "Music",
+    "Player"
+  ],
+  "author": "Fabian Pacherres",
+  "license": "MIT"
+}
