@@ -32,9 +32,9 @@
       @include btn(
         $w: 40px,
         $h: 40px,
-        $bg: transparent,
         $c: $bg-secondary,
-        $i-fs: 20px
+        $i-fs: 20px,
+        $btn: true
       );
     }
   }
