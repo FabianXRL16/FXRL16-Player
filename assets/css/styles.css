@@ -57,6 +57,8 @@
   outline: none;
   cursor: pointer;
   transition: 0.3s;
+  padding: 0;
+  margin: 0;
   transform: scale(1);
 }
 .song .controls button i {
@@ -93,6 +95,8 @@
   outline: none;
   cursor: pointer;
   transition: 0.3s;
+  padding: 0;
+  margin: 0;
 }
 .playList .searchTitle button i {
   font-size: 20px;
@@ -112,6 +116,69 @@
   color: #B12E10;
   opacity: 0.6;
 }
+.playList .containerList {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 10px;
+}
+.playList .containerList button {
+  width: calc((85vw - 30px) / 2);
+  height: calc((85vw - 30px) / 2 + 50px);
+  background-color: #B12E10;
+  color: #cccccc;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.playList .containerList button i {
+  font-size: none;
+  line-height: none;
+}
+.playList .containerList button:hover {
+  background-color: #cccccc;
+  color: #B12E10;
+}
+.playList .containerList button .img {
+  width: calc((85vw - 30px) / 2);
+  height: calc((85vw - 30px) / 2);
+  background-size: cover;
+}
+.playList .containerList button .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 5px;
+  text-align: start;
+}
+.playList .containerList button .title h1 {
+  width: calc((85vw - 30px) / 2 - 20px);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.playList .containerList button .title p {
+  width: calc((85vw - 30px) / 2 - 20px);
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 body {
   background-color: #FFD800;
@@ -124,7 +191,7 @@ body {
 }
 
 .container {
-  height: 1000px;
+  height: auto;
   width: 85vw;
   display: grid;
   grid-template-rows: 45vw 80px 1fr;

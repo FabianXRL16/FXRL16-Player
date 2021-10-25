@@ -17,12 +17,7 @@
       color: $bg-secondary;
     }
     button {
-      @include btn(
-        $w: 40px,
-        $h: 40px,
-        $c: $bg-secondary,
-        $i-fs: 20px,
-      );
+      @include btn($w: 40px, $h: 40px, $c: $bg-secondary, $i-fs: 20px);
     }
   }
   .searchInput {
@@ -35,6 +30,54 @@
         $b: 2px,
         $cb: $bg-secondary
       );
+    }
+  }
+  .containerList {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 10px;
+    button {
+      @include btn(
+        $w: calc((85vw - 30px) / 2),
+        $h: calc((85vw - 30px) / 2 + 50px),
+        $bg: $bg-secondary,
+        $c: $white,
+        $i-fs: none,
+        $btn: false
+      );
+      display: flex;
+      flex-direction: column;
+      &:hover {
+        background-color: $white;
+        color: $bg-secondary;
+      }
+      .img {
+        width: calc((85vw - 30px) / 2);
+        height: calc((85vw - 30px) / 2);
+        background-size: cover;
+      }
+      .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+        gap: 5px;
+        text-align: start;
+        h1 {
+          @include title($w: calc((85vw - 30px) / 2 - 20px), $m: 0, $fs: 18px);
+        }
+        p {
+          @include title(
+            $w: calc((85vw - 30px) / 2 - 20px),
+            $m: 0,
+            $fs: 14px,
+            $fw: 300
+          );
+        }
+      }
     }
   }
 }
