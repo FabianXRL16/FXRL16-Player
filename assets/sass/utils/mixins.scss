@@ -1,6 +1,6 @@
 @import "../utils/var.scss";
 
-@mixin btn($w, $h, $bg: transparent, $c: $bg-secondary, $i-fs) {
+@mixin btn($w, $h, $bg: transparent, $c: $bg-secondary, $i-fs, $btn: false) {
   width: $w;
   height: $h;
   background-color: $bg;
@@ -8,16 +8,18 @@
   border: none;
   outline: none;
   cursor: pointer;
-  transform: scale(1);
   transition: 0.3s;
   i {
     font-size: $i-fs;
     line-height: $i-fs;
   }
-  &:hover {
-    i {
-      transform: scale(0.8);
-      transition: 0.3s;
+  @if $btn {
+    transform: scale(1);
+    &:hover {
+      i {
+        transform: scale(.8);
+        transition: 0.3s;
+      }
     }
   }
 }
@@ -31,4 +33,19 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+@mixin input($w, $h, $bg: transparent, $c, $fs, $b, $cb) {
+  width: $w;
+  height: $h;
+  background-color: $bg;
+  color: $c;
+  font-size: $fs;
+  border: none;
+  border-bottom: $b solid $cb;
+  outline: none;
+  &::placeholder {
+    color: $c;
+    opacity: 0.6;
+  }
 }
