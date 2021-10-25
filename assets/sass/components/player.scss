@@ -1,0 +1,9 @@
+@import "../utils/var.scss";
+
+.player {
+  background-color: $bg-tertiary;
+  video {
+    height: 100%;
+    width: 100%;
+  }
+}
