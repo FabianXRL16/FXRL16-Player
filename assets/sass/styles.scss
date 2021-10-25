@@ -1,0 +1,29 @@
+
+// Componentes
+@import './components/player.scss';
+@import './components/song.scss';
+@import './components/playList.scss';
+
+// Utils
+@import './utils/var.scss';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+body{
+    background-color: $bg-primary;
+    padding: 60px 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    height: 1000px;
+    width: 85vw;
+    display: grid;
+    grid-template-rows: calc(80vw*9/16) 80px 1fr;
+    row-gap: 10px;
+}
