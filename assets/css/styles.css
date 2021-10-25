@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+.player {
+  background-color: rgba(239, 155, 15, 0.5);
+}
+.player video {
+  height: 100%;
+  width: 100%;
+}
+
+.song {
+  background-color: rgba(239, 155, 15, 0.5);
+  display: grid;
+  grid-template-columns: 60px 1fr 80px;
+  gap: 10px;
+  place-content: center;
+  padding: 0 10px;
+}
+.song .album {
+  width: 60px;
+  height: 60px;
+}
+.song .title {
+  color: #B12E10;
+  padding-top: 12px;
+}
+.song .title h2 {
+  width: calc(85vw - 180px);
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.song .title p {
+  width: calc(85vw - 180px);
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.song .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.song .controls button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: #B12E10;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.song .controls button i {
+  font-size: 20px;
+  line-height: 20px;
+}
+.song .controls button:hover i {
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+
+.playList {
+  background-color: rgba(239, 155, 15, 0.5);
+}
+
+body {
+  background-color: #FFD800;
+  padding: 60px 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  height: 1000px;
+  width: 85vw;
+  display: grid;
+  grid-template-rows: 45vw 80px 1fr;
+  row-gap: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
