@@ -56,8 +56,8 @@
   border: none;
   outline: none;
   cursor: pointer;
-  transform: scale(1);
   transition: 0.3s;
+  transform: scale(1);
 }
 .song .controls button i {
   font-size: 20px;
@@ -70,6 +70,47 @@
 
 .playList {
   background-color: rgba(239, 155, 15, 0.5);
+  padding: 10px;
+}
+.playList .searchTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.playList .searchTitle h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #B12E10;
+}
+.playList .searchTitle button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: #B12E10;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.playList .searchTitle button i {
+  font-size: 20px;
+  line-height: 20px;
+}
+.playList .searchInput input {
+  width: calc(85vw - 20px);
+  height: 40px;
+  background-color: transparent;
+  color: #B12E10;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #B12E10;
+  outline: none;
+}
+.playList .searchInput input::placeholder {
+  color: #B12E10;
+  opacity: 0.6;
 }
 
 body {
