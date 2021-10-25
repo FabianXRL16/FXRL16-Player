@@ -1,0 +1,34 @@
+@import "../utils/var.scss";
+
+@mixin btn($w, $h, $bg: transparent, $c: $bg-secondary, $i-fs) {
+  width: $w;
+  height: $h;
+  background-color: $bg;
+  color: $c;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s;
+  i {
+    font-size: $i-fs;
+    line-height: $i-fs;
+  }
+  &:hover {
+    i {
+      transform: scale(0.8);
+      transition: 0.3s;
+    }
+  }
+}
+
+@mixin title($w, $m, $fs, $fw: 600) {
+  width: $w;
+  margin: $m;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $fs;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
