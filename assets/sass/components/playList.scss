@@ -5,11 +5,16 @@
 .playList {
   background-color: $bg-tertiary;
   padding: 10px;
+  position: relative;
   .searchTitle {
+    z-index: 3;
+    position: absolute;
     display: flex;
+    width: calc(85vw - 20px);
     justify-content: space-between;
     align-items: center;
     height: 50px;
+    background-color: $bg-tertiary;
     h1 {
       margin: 0;
       font-size: 20px;
@@ -17,24 +22,33 @@
       color: $bg-secondary;
     }
     button {
-      @include btn($w: 40px, $h: 40px, $c: $bg-secondary, $i-fs: 20px);
+      @include btn($w: auto, $h: 40px, $c: $bg-secondary, $i-fs: 20px);
     }
   }
   .searchInput {
+    z-index: 2;
+    position: absolute;
+    transform: translateY(50px);
+    transition: .3s;
     input {
       @include input(
         $w: calc(85vw - 20px),
         $h: 40px,
         $c: $bg-secondary,
         $fs: 16px,
+        $bg: $bg-tertiary,
         $b: 2px,
         $cb: $bg-secondary
       );
     }
   }
   .containerList {
+    padding-top: 110px;
+    transition: .3s;
     width: 100%;
-    margin-top: 20px;
+    height: 620px;
+    box-sizing: border-box;
+    overflow-x: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 .player {
-  background-color: rgba(239, 155, 15, 0.5);
+  background-color: #F2B705;
 }
 .player video {
   height: 100%;
@@ -8,7 +8,7 @@
 }
 
 .song {
-  background-color: rgba(239, 155, 15, 0.5);
+  background-color: #F2B705;
   display: grid;
   grid-template-columns: 60px 1fr 80px;
   gap: 10px;
@@ -71,14 +71,19 @@
 }
 
 .playList {
-  background-color: rgba(239, 155, 15, 0.5);
+  background-color: #F2B705;
   padding: 10px;
+  position: relative;
 }
 .playList .searchTitle {
+  z-index: 3;
+  position: absolute;
   display: flex;
+  width: calc(85vw - 20px);
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  background-color: #F2B705;
 }
 .playList .searchTitle h1 {
   margin: 0;
@@ -87,7 +92,7 @@
   color: #B12E10;
 }
 .playList .searchTitle button {
-  width: 40px;
+  width: auto;
   height: 40px;
   background-color: transparent;
   color: #B12E10;
@@ -102,23 +107,34 @@
   font-size: 20px;
   line-height: 20px;
 }
+.playList .searchInput {
+  z-index: 2;
+  position: absolute;
+  transform: translateY(50px);
+  transition: 0.3s;
+}
 .playList .searchInput input {
   width: calc(85vw - 20px);
   height: 40px;
-  background-color: transparent;
+  background-color: #F2B705;
   color: #B12E10;
   font-size: 16px;
   border: none;
   border-bottom: 2px solid #B12E10;
   outline: none;
+  padding: 0;
 }
 .playList .searchInput input::placeholder {
   color: #B12E10;
   opacity: 0.6;
 }
 .playList .containerList {
+  padding-top: 110px;
+  transition: 0.3s;
   width: 100%;
-  margin-top: 20px;
+  height: 620px;
+  box-sizing: border-box;
+  overflow-x: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;

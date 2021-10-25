@@ -46,6 +46,7 @@
   border: none;
   border-bottom: $b solid $cb;
   outline: none;
+  padding: 0;
   &::placeholder {
     color: $c;
     opacity: 0.6;
