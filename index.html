@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FXRL16 Player</title>
-</head>
-<body>
-    <div>Hola</div>
-</body>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a3a61b758e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="player">
+        <video autoplay muted src="./assets/videos/lofi.mp4"></video>
+      </div>
+      <div class="song">
+        <img
+          class="album"
+          src="https://mp3.hhgroups.com/albumes/Eminem-The-Marshall-Mathers-LP-44016_front.jpg"
+          alt=""
+        />
+        <div class="title">
+          <h2>Stan</h2>
+          <p>Eminen & Dido</p>
+        </div>
+        <div class="controls">
+          <button>
+            <i class="fas fa-backward"></i>
+          </button>
+          <button>
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+      </div>
+      <div class="playList">playList</div>
+    </div>
+  </body>
 </html>
