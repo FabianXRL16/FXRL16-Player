@@ -1,4 +1,6 @@
+// Utils
 @import "../utils/var.scss";
+@import "../utils/mixins.scss";
 
 .song {
   background-color: $bg-tertiary;
@@ -16,23 +18,10 @@
     color: $bg-secondary;
     padding-top: 12px;
     h2 {
-      width: calc(85vw - 180px);
-      margin: 0;
-      font-size: 20px;
-      line-height: 20px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @include title($w: calc(85vw - 180px), $m: 0, $fs: 20px);
     }
     p {
-      margin-top: 5px;
-      width: calc(85vw - 180px);
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 14px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @include title($w: calc(85vw - 180px), $m: 5px 0 0, $fs: 14px, $fw: 300);
     }
   }
   .controls {
@@ -40,17 +29,13 @@
     justify-content: space-between;
     align-items: center;
     button {
-      height: 40px;
-      width: 40px;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      i {
-        font-size: 20px;
-        line-height: 20px;
-        color: $bg-secondary;
-      }
+      @include btn(
+        $w: 40px,
+        $h: 40px,
+        $bg: transparent,
+        $c: $bg-secondary,
+        $i-fs: 20px
+      );
     }
   }
 }
