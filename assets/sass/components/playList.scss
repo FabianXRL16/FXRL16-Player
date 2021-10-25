@@ -1,5 +1,40 @@
-@import '../utils/var.scss';
+// Utils
+@import "../utils/var.scss";
+@import "../utils/mixins.scss";
 
-.playList{
-    background-color: $bg-tertiary;
+.playList {
+  background-color: $bg-tertiary;
+  padding: 10px;
+  .searchTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 400;
+      color: $bg-secondary;
+    }
+    button {
+      @include btn(
+        $w: 40px,
+        $h: 40px,
+        $c: $bg-secondary,
+        $i-fs: 20px,
+      );
+    }
+  }
+  .searchInput {
+    input {
+      @include input(
+        $w: calc(85vw - 20px),
+        $h: 40px,
+        $c: $bg-secondary,
+        $fs: 16px,
+        $b: 2px,
+        $cb: $bg-secondary
+      );
+    }
+  }
 }
