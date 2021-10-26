@@ -52,3 +52,21 @@
     opacity: 0.6;
   }
 }
+
+@mixin mobiles{
+  @media #{$mobile}{
+    @content;
+  }
+}
+
+@mixin tablets{
+  @media #{$tablet}{
+    @content;
+  }
+}
+
+@mixin desktops{
+  @media #{$desktop}{
+    @content;
+  }
+}

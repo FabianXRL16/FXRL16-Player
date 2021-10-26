@@ -198,12 +198,16 @@
 
 body {
   background-color: #FFD800;
-  padding: 60px 0;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
+}
+@media (max-width: 480px) {
+  body {
+    padding: 60px 0;
+  }
 }
 
 .container {
