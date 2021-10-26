@@ -15,7 +15,13 @@
   <body>
     <div class="container">
       <div class="player">
-        <video autoplay muted src="./assets/videos/lofi.mp4"></video>
+        <video muted poster="./assets/images/poster.jpg" src="./assets/videos/lofi.mp4"></video>
+        <div class="controls">
+          <button class="btn backward"><i class="fas fa-backward"></i></button>
+          <button class="btn play" id="play"><i class="fas fa-play"></i></button>
+          <button class="btn plause" id="pause" hidden><i class="fas fa-pause"></i></button>
+          <button class="btn forward"><i class="fas fa-forward"></i></button>
+        </div>
       </div>
       <div class="song">
         <img
@@ -29,10 +35,10 @@
         </div>
         <div class="controls">
           <button>
-            <i class="fas fa-backward back"></i>
+            <i class="fas fa-step-backward back"></i>
           </button>
           <button>
-            <i class="fas fa-forward next"></i>
+            <i class="fas fa-step-forward next"></i>
           </button>
         </div>
       </div>
