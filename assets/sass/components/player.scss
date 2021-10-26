@@ -1,9 +1,19 @@
 @import "../utils/var.scss";
+@import "../utils/mixins.scss";
 
 .player {
   background-color: $bg-tertiary;
   video {
     height: 100%;
     width: 100%;
+  }
+  @include mobiles {
+    
+  }
+  @include tablets {
+    
+  }
+  @include desktops {
+    grid-area: player;
   }
 }
