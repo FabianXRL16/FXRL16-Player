@@ -4,17 +4,32 @@
 
 .playList {
   background-color: $bg-tertiary;
-  padding: 10px;
   position: relative;
   .searchTitle {
     z-index: 3;
     position: absolute;
     display: flex;
-    width: calc(85vw - 20px);
     justify-content: space-between;
     align-items: center;
-    height: 50px;
     background-color: $bg-tertiary;
+    @include mobiles {
+      width: 85vw;
+      height: 50px;
+      box-sizing: border-box;
+    }
+    @include tablets {
+      width: calc(80vw - 40px);
+      height: 60px;
+    }
+    @include desktops {
+      grid-area: playList;
+      width: 320px;
+      height: 70px;
+      top: 0;
+      left: 0;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
     h1 {
       margin: 0;
       font-size: 20px;
@@ -26,10 +41,8 @@
     }
   }
   .searchInput {
-    z-index: 2;
+    transition: 0.3s;
     position: absolute;
-    transform: translateY(50px);
-    transition: .3s;
     input {
       @include input(
         $w: calc(85vw - 20px),
@@ -40,23 +53,62 @@
         $b: 2px,
         $cb: $bg-secondary
       );
+      box-sizing: border-box;
+      @include mobiles {
+      }
+      @include tablets {
+        width: calc(80vw - 40px);
+      }
+      @include desktops {
+        width: 320px;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+    }
+    @include mobiles {
+      top: 5px;
+    }
+    @include tablets {
+      top: 20px;
+    }
+    @include desktops {
+      top: 20px;
+      left: 0;
     }
   }
   .containerList {
-    padding-top: 110px;
-    transition: .3s;
-    width: 100%;
-    height: 620px;
-    box-sizing: border-box;
     overflow-x: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     place-items: center;
-    gap: 10px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+      width: 0;  
+    }
+    @include mobiles {
+      height: 620px;
+      padding-top: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    @include tablets {
+      height: 620px;
+      padding-top: 60px;
+      width: calc(80vw - 40px);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    @include desktops {
+      height: 470px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding-top: 50px;
+    }
     button {
       @include btn(
-        $w: calc((85vw - 30px) / 2),
-        $h: calc((85vw - 30px) / 2 + 50px),
+        $w: calc((85vw - 8px) / 2),
+        $h: calc((85vw - 8px) / 2 + 50px),
         $bg: $bg-secondary,
         $c: $white,
         $i-fs: none,
@@ -68,10 +120,28 @@
         background-color: $white;
         color: $bg-secondary;
       }
+      @include tablets {
+        width: calc((80vw - 30px) / 3);
+        height: calc((80vw - 30px - 40px) / 3 + 50px);
+      }
+      @include desktops {
+        // width: 125px;
+        width: 135px;
+        height: 180px;
+      }
       .img {
-        width: calc((85vw - 30px) / 2);
-        height: calc((85vw - 30px) / 2);
+        width: calc((85vw - 8px) / 2);
+        height: calc((85vw - 8px) / 2);
         background-size: cover;
+        @include mobiles {
+        }
+        @include tablets {
+          width: calc((80vw - 30px) / 3);
+          height: calc(80vw - 30px - 40px);
+        }
+        @include desktops {
+          width:100%;
+        }
       }
       .title {
         display: flex;
@@ -80,18 +150,50 @@
         padding: 10px;
         gap: 5px;
         text-align: start;
+        box-sizing: border-box;
+        @include desktops {
+          height: 50px;
+          padding: 8px;
+          gap: 3px;
+        }
         h1 {
-          @include title($w: calc((85vw - 30px) / 2 - 20px), $m: 0, $fs: 18px);
+          @include title($w: calc((85vw - 8px) / 2 - 20px), $m: 0, $fs: 18px);
+          @include tablets {
+            width: calc((80vw - 90px) / 3);
+          }
+          @include desktops {
+            // -moz-width: 109px;
+            width: 119px;
+            font-size: 14px;
+          }
         }
         p {
           @include title(
-            $w: calc((85vw - 30px) / 2 - 20px),
+            $w: calc((85vw - 8px) / 2 - 20px),
             $m: 0,
             $fs: 14px,
             $fw: 300
           );
+          @include tablets {
+            width: calc((80vw - 90px) / 3);
+          }
+          @include desktops {
+            // width: 109px;
+            width: 119px;
+            font-size: 12px;
+          }
         }
       }
     }
+  }
+  @include mobiles {
+    padding: 0;
+  }
+  @include tablets {
+    padding: 0 20px 20px 20px;
+  }
+  @include desktops {
+    grid-area: playList;
+    padding: 20px;
   }
 }
