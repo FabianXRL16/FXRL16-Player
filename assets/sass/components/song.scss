@@ -8,7 +8,6 @@
   grid-template-columns: 60px 1fr 80px;
   gap: 10px;
   place-content: center;
-  padding: 0 10px;
 
   .album {
     width: 60px;
@@ -19,15 +18,34 @@
     padding-top: 12px;
     h2 {
       @include title($w: calc(85vw - 180px), $m: 0, $fs: 20px);
+      @include mobiles {
+      }
+      @include tablets {
+        width:  calc(80vw - 200px);//////////////////////////////////////////////////
+      }
+      @include desktops {
+        width: 520px;
+      }
     }
     p {
       @include title($w: calc(85vw - 180px), $m: 5px 0 0, $fs: 14px, $fw: 300);
+      @include mobiles {
+      }
+      @include tablets {
+        width:  calc(80vw - 200px);
+      }
+      @include desktops {
+        width: 520px;
+      }
     }
   }
   .controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include tablets{
+      justify-content: initial;
+    }
     button {
       @include btn(
         $w: 40px,
@@ -36,6 +54,24 @@
         $i-fs: 20px,
         $btn: true
       );
+      @include tablets {
+        width: 35px;
+        .back{
+          margin-right: 20px;
+        }
+        .next{
+          margin-left: 17px;
+        }
+      }
     }
+  }
+  @include mobiles {
+  }
+  @include tablets {
+    padding: 0 20px;
+  }
+  @include desktops {
+    grid-area: song;
+    padding: 0 20px;
   }
 }
