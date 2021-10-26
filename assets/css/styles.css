@@ -287,7 +287,7 @@
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .playList .containerList button {
-    width: calc((80vw - 30px) / 3);
+    width: calc((80vw - 30px - 40px) / 3);
     height: calc((80vw - 30px - 40px) / 3 + 50px);
   }
 }
@@ -304,7 +304,7 @@
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .playList .containerList button .img {
-    width: calc((80vw - 30px) / 3);
+    width: calc((80vw - 30px - 40px) / 3);
     height: calc(80vw - 30px - 40px);
   }
 }
@@ -341,7 +341,7 @@
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .playList .containerList button .title h1 {
-    width: calc((80vw - 90px) / 3);
+    width: calc((80vw - 135px) / 3);
   }
 }
 @media (min-width: 1024px) {
@@ -362,7 +362,8 @@
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .playList .containerList button .title p {
-    width: calc((80vw - 90px) / 3);
+    width: calc((80vw - 135px) / 3);
+    width: 100px;
   }
 }
 @media (min-width: 1024px) {

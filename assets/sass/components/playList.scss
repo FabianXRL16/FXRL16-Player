@@ -121,7 +121,7 @@
         color: $bg-secondary;
       }
       @include tablets {
-        width: calc((80vw - 30px) / 3);
+        width: calc((80vw - 30px - 40px) / 3);
         height: calc((80vw - 30px - 40px) / 3 + 50px);
       }
       @include desktops {
@@ -136,7 +136,7 @@
         @include mobiles {
         }
         @include tablets {
-          width: calc((80vw - 30px) / 3);
+          width: calc((80vw - 30px - 40px) / 3);
           height: calc(80vw - 30px - 40px);
         }
         @include desktops {
@@ -159,7 +159,7 @@
         h1 {
           @include title($w: calc((85vw - 8px) / 2 - 20px), $m: 0, $fs: 18px);
           @include tablets {
-            width: calc((80vw - 90px) / 3);
+          width: calc((80vw - 135px) / 3);
           }
           @include desktops {
             // -moz-width: 109px;
@@ -175,7 +175,8 @@
             $fw: 300
           );
           @include tablets {
-            width: calc((80vw - 90px) / 3);
+            width: calc((80vw - 135px) / 3);
+            width: 100px;
           }
           @include desktops {
             // width: 109px;
