@@ -1,6 +1,7 @@
 // Utils
 @import "../utils/var.scss";
 @import "../utils/mixins.scss";
+@import "../utils/animations.scss";
 
 .playList {
   background-color: $bg-tertiary;
@@ -83,8 +84,8 @@
     box-sizing: border-box;
     transition: 0.3s;
     overflow-y: auto;
-    &::-webkit-scrollbar{
-      width: 0;  
+    &::-webkit-scrollbar {
+      width: 0;
     }
     @include mobiles {
       height: 620px;
@@ -116,9 +117,45 @@
       );
       display: flex;
       flex-direction: column;
+      position: relative;
       &:hover {
         background-color: $white;
         color: $bg-secondary;
+      }
+      .playing {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        .bar {
+          background-color: $bg-secondary;
+          width: 3px;
+          animation: sound 2s ease-in-out infinite;
+          transform: scale(0);
+          &:nth-child(1) {
+            height: 8px;
+            animation-delay: 0s;
+            animation-timing-function: ease-in(0.075, 0.82, 0.165, 1);
+          }
+          &:nth-child(2) {
+            height: 15px;
+            animation-delay: 0.2s;
+            animation-timing-function: ease-out(0.77, 0, 0.175, 1);
+          }
+          &:nth-child(3) {
+            height: 8px;
+            animation-delay: 0.1s;
+            animation-timing-function: ease-in(0.47, 0, 0.745, 0.715);
+          }
+        }
       }
       @include tablets {
         width: calc((80vw - 30px - 40px) / 3);
@@ -140,7 +177,7 @@
           height: calc(80vw - 30px - 40px);
         }
         @include desktops {
-          width:100%;
+          width: 100%;
         }
       }
       .title {
@@ -159,7 +196,7 @@
         h1 {
           @include title($w: calc((85vw - 8px) / 2 - 20px), $m: 0, $fs: 18px);
           @include tablets {
-          width: calc((80vw - 135px) / 3);
+            width: calc((80vw - 135px) / 3);
           }
           @include desktops {
             // -moz-width: 109px;

@@ -1,0 +1,9 @@
+@keyframes sound {
+    0%,
+    100% {
+      transform: scaleY(.5);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
