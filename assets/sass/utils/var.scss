@@ -5,3 +5,14 @@ $bg-secondary: #B12E10;
 $bg-tertiary: #F2B705;
 
 $white: #cccccc;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+
+// Media Query
+$mobile: '(max-width: #{$breakpoint-mobile})';
+$tablet: '(min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet})';
+$desktop: '(min-width: #{$breakpoint-desktop})';
