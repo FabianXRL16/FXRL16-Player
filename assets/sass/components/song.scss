@@ -17,9 +17,7 @@
     color: $bg-secondary;
     padding-top: 12px;
     h2 {
-      @include title($w: calc(85vw - 180px), $m: 0, $fs: 20px);
-      @include mobiles {
-      }
+      @include title($w: calc(85vw - 140px), $m: 0, $fs: 20px);
       @include tablets {
         width:  calc(80vw - 200px);//////////////////////////////////////////////////
       }
@@ -28,9 +26,7 @@
       }
     }
     p {
-      @include title($w: calc(85vw - 180px), $m: 5px 0 0, $fs: 14px, $fw: 300);
-      @include mobiles {
-      }
+      @include title($w: calc(85vw - 140px), $m: 5px 0 0, $fs: 14px, $fw: 300);
       @include tablets {
         width:  calc(80vw - 200px);
       }
@@ -54,6 +50,15 @@
         $i-fs: 20px,
         $btn: true
       );
+      @include mobiles {
+        width: 30px;
+        .back{
+          margin-right: 20px;
+        }
+        .next{
+          margin-left: 15px;
+        }
+      }
       @include tablets {
         width: 35px;
         .back{
@@ -66,6 +71,7 @@
     }
   }
   @include mobiles {
+    grid-template-columns: 60px 1fr 60px;
   }
   @include tablets {
     padding: 0 20px;
