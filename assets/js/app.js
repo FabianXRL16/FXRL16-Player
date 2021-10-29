@@ -1,37 +1,48 @@
 let inputShow = true;
 
 function search() {
-  toShowInput();
+  if($input.value){
+    console.log($input.value)
+    setTimeout(toShowInput,1000)
+  }else{
+    toShowInput();
+  }
 }
 
+let $input = document.querySelector('#inputSearch');
+
+$input.addEventListener('keyup', (e)=>{
+  if(e.keyCode === 13){
+    toShowInput();
+  }
+})
+
 function toShowInput() {
-  let input = document.querySelector("#inputSearch");
-  let containerList = document.querySelector(".containerList");
-  let pad = parseInt(containerList.style.paddingTop.replace("px", ""));
-  let widthScreen = screen.width
+  let $containerList = document.querySelector(".containerList");
+  let pad = parseInt($containerList.style.paddingTop.replace("px", ""));
+  let widthScreen = screen.width;
   if (inputShow) {
-    input.style.transform = "translateY(40px)";
-    input.style.transition = ".3s";
-    if(widthScreen > 480 && widthScreen <= 768){
-      pad+=70
-    }else{
-      pad+= 50
+    $input.style.transform = "translateY(40px)";
+    $input.style.transition = ".3s";
+    if (widthScreen > 480 && widthScreen <= 768) {
+      pad += 70;
+    } else {
+      pad += 50;
     }
-    containerList.style.paddingTop = pad + "px";
-    containerList.style.transition = ".3s";
+    $containerList.style.paddingTop = pad + "px";
+    $containerList.style.transition = ".3s";
   } else {
-    input.style.transform = "translateY(0)";
-    if(widthScreen > 480 && widthScreen <= 768){
-      containerList.style.paddingTop = "65px";
-    }else{
-      containerList.style.paddingTop = "50px";
+    $input.style.transform = "translateY(0)";
+    if (widthScreen > 480 && widthScreen <= 768) {
+      $containerList.style.paddingTop = "65px";
+    } else {
+      $containerList.style.paddingTop = "50px";
     }
-    input.style.transition = ".3s";
-    containerList.style.transition = ".3s";
+    $input.style.transition = ".3s";
+    $containerList.style.transition = ".3s";
   }
   inputShow = !inputShow;
-  input.value = "";
-  console.log(containerList.style.paddingTop);
+  $input.value = "";
 }
 
 let $video = document.querySelector("video");
