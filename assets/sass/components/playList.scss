@@ -44,9 +44,10 @@
   .searchInput {
     transition: 0.3s;
     position: absolute;
+    z-index: 2;
     input {
       @include input(
-        $w: calc(85vw - 20px),
+        $w: 85vw,
         $h: 40px,
         $c: $bg-secondary,
         $fs: 16px,
@@ -61,8 +62,7 @@
         width: calc(80vw - 40px);
       }
       @include desktops {
-        width: 320px;
-        padding: 0 20px;
+        width: 280px;
         box-sizing: border-box;
       }
     }
@@ -74,7 +74,7 @@
     }
     @include desktops {
       top: 20px;
-      left: 0;
+      left: 20px;
     }
   }
   .containerList {
@@ -95,7 +95,7 @@
     }
     @include tablets {
       height: 620px;
-      padding-top: 60px;
+      padding-top: 65px;
       width: calc(80vw - 40px);
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
