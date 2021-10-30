@@ -1,3 +1,7 @@
+import init from './api';
+
+console.log(init)
+
 let inputShow = true;
 
 function search() {
