@@ -364,7 +364,7 @@
 }
 @media (max-width: 480px) {
   .playList .containerList {
-    height: 620px;
+    max-height: 620px;
     padding-top: 50px;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -372,7 +372,7 @@
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .playList .containerList {
-    height: 620px;
+    max-height: 620px;
     padding-top: 65px;
     width: calc(80vw - 40px);
     grid-template-columns: repeat(3, 1fr);
