@@ -1,6 +1,20 @@
-import init from './api';
+// import init from './api';
 
-console.log(init)
+// console.log(init)
+
+// function moveNameSong(){
+//   let widthScreen = screen.width
+//   let $text = document.querySelector('.nameSong')
+//   let textValue = $text.innerText
+//   if(widthScreen < 480 && textValue.length > 20){
+//     console.log("mobile")
+//   }else if(widthScreen > 480 && widthScreen <= 768 && textValue.length > 70){
+//     console.log("tablet")
+//   }else if(widthScreen > 768 && textValue.length > 100){
+//     console.log("desktop")
+//   }
+// } 
+// moveNameSong()
 
 let inputShow = true;
 
@@ -18,6 +32,7 @@ let $input = document.querySelector('#inputSearch');
 $input.addEventListener('keyup', (e)=>{
   if(e.keyCode === 13){
     toShowInput();
+    moveNameSong()
   }
 })
 
@@ -67,3 +82,5 @@ function handlePause() {
   $pause.hidden = true;
   $play.hidden = false;
 }
+
+let playList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]

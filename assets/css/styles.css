@@ -95,28 +95,30 @@
     width: 520px;
   }
 }
-.song .title .boxNameSong h2 {
+.song .title .boxNameSong .nameSong {
   white-space: nowrap;
   margin: 0;
   font-size: 20px;
   line-height: 20px;
-  animation: textMoveMobile 10s linear 2s infinite normal;
 }
 @media (max-width: 480px) {
-  .song .title .boxNameSong h2 {
+  .song .title .boxNameSong .nameSong {
     font-size: 16px;
     line-height: 16px;
     margin: 0 100px 0 0;
+    animation: textMoveMobile 30s linear 2s infinite normal;
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
-  .song .title .boxNameSong h2 {
+  .song .title .boxNameSong .nameSong {
     margin: 0 200px 0 0;
+    animation: textMoveTablet 30s linear 2s infinite normal;
   }
 }
 @media (min-width: 1024px) {
-  .song .title .boxNameSong h2 {
+  .song .title .boxNameSong .nameSong {
     margin: 0 300px 0 0;
+    animation: textMoveDesktop 30s linear 2s infinite normal;
   }
 }
 .song .title p {
