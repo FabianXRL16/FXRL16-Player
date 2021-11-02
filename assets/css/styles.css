@@ -78,7 +78,7 @@
 .song .title .boxNameSong {
   display: flex;
   width: calc(85vw - 140px);
-  overflow: auto;
+  overflow: hidden;
   height: 30px;
 }
 .song .title .boxNameSong::-webkit-scrollbar {
@@ -100,6 +100,7 @@
   margin: 0;
   font-size: 20px;
   line-height: 20px;
+  animation: textMoveMobile 10s linear 2s infinite normal;
 }
 @media (max-width: 480px) {
   .song .title .boxNameSong h2 {
@@ -210,6 +211,30 @@
   }
 }
 
+@keyframes textMoveMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 100px));
+  }
+}
+@keyframes textMoveTablet {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 200px));
+  }
+}
+@keyframes textMoveDesktop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 300px));
+  }
+}
 @keyframes sound {
   0%, 100% {
     transform: scaleY(0.5);
