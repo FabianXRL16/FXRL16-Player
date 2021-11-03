@@ -59,42 +59,6 @@
       }
     }
   }
-  // .searchInput {
-  //   transition: 0.3s;
-  //   position: absolute;
-  //   z-index: 2;
-  //   input {
-  //     @include input(
-  //       $w: 85vw,
-  //       $h: 40px,
-  //       $c: $bg-secondary,
-  //       $fs: 16px,
-  //       $bg: $bg-tertiary,
-  //       $b: 2px,
-  //       $cb: $bg-secondary
-  //     );
-  //     box-sizing: border-box;
-  //     @include mobiles {
-  //     }
-  //     @include tablets {
-  //       width: calc(80vw - 40px);
-  //     }
-  //     @include desktops {
-  //       width: 280px;
-  //       box-sizing: border-box;
-  //     }
-  //   }
-  //   @include mobiles {
-  //     top: 5px;
-  //   }
-  //   @include tablets {
-  //     top: 20px;
-  //   }
-  //   @include desktops {
-  //     top: 20px;
-  //     left: 20px;
-  //   }
-  // }
   .containerList {
     overflow-x: auto;
     display: grid;
@@ -244,6 +208,7 @@
   }
   @include mobiles {
     padding: 0;
+    background-color: transparent;
   }
   @include tablets {
     padding: 0 20px 20px 20px;

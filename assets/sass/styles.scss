@@ -2,6 +2,7 @@
 @import "./components/player.scss";
 @import "./components/song.scss";
 @import "./components/playList.scss";
+@import "./components/modal.scss";
 
 // Utils
 @import "./utils/var.scss";
@@ -21,10 +22,6 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  @include mobiles {
-    padding: 60px 0;
-    background-color: $bg-tertiary;
-  }
   @include tablets {
     padding: 50px 0;
   }
@@ -37,10 +34,13 @@ body {
 .container {
   height: auto;
   display: grid;
+  position: relative;
   @include mobiles {
-    width: 85vw;
+    width: 100vw;
     grid-template-rows: calc(85vw*0.5625) 80px 1fr;
     row-gap: 10px;
+    padding: 60px 7.5vw;
+    background-color: $bg-tertiary;
   }
   @include tablets {
     width: 80vw;
