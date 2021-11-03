@@ -34,7 +34,8 @@
       color: $bg-secondary;
     }
     button {
-      @include btn($w: auto, $h: 40px, $c: $bg-secondary, $i-fs: 16px);
+      @include btn($w: 15px, $h: 40px, $c: $bg-secondary, $i-fs: 16px);
+      padding-left: 10px;
     }
   }
   .searchInput {
