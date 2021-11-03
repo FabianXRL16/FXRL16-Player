@@ -90,18 +90,22 @@
       @include btn(
         $w: calc((85vw - 8px) / 2),
         $h: calc((85vw - 8px) / 2 + 50px),
-        $bg: $bg-secondary,
-        $c: $white,
+        $bg: $bg-tertiary,
+        $c: $bg-secondary,
         $i-fs: none,
         $btn: false
       );
+      transform: scale(1);
+      transition: .3s;
       background-size: cover;
       display: flex;
       flex-direction: column;
       position: relative;
       &:hover {
-        background-color: $white;
-        color: $bg-secondary;
+        background-color: $black;
+        color: $white;
+        transform: scale(.9);
+        transition: .3s;
       }
       .playing {
         position: absolute;
