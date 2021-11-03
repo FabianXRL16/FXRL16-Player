@@ -38,7 +38,7 @@
         width: calc(80vw - 200px);
       }
       @include desktops {
-        width: 520px;
+        width: 540px;
       }
       .nameSong {
         white-space: nowrap;
@@ -98,12 +98,22 @@
         }
       }
       @include tablets {
-        width: 35px;
+        background-color: red;
+        width: 40px;
         .back {
           margin-right: 20px;
         }
         .next {
-          margin-left: 17px;
+          margin-left: 20px;
+        }
+      }
+      @include desktops {
+        width: 25px;
+        .back {
+          margin-left: -12px;
+        }
+        .next {
+          margin-left: 10px;
         }
       }
     }
@@ -116,6 +126,7 @@
     padding: 0 20px;
   }
   @include desktops {
+    grid-template-columns: 60px 1fr 50px;
     grid-area: song;
     padding: 0 20px;
   }
