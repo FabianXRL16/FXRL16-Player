@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 .player {
-  background-color: #F2B705;
+  background-color: rgba(0, 0, 0, 0.7);
   position: relative;
 }
 .player video {
@@ -46,7 +46,7 @@
 }
 
 .song {
-  background-color: #F2B705;
+  background-color: rgba(0, 0, 0, 0.7);
   display: grid;
   grid-template-columns: 60px 1fr 80px;
   gap: 10px;
@@ -57,7 +57,7 @@
   height: 60px;
 }
 .song .title {
-  color: #B12E10;
+  color: #747474;
   padding-top: 12px;
 }
 @media (max-width: 480px) {
@@ -157,7 +157,7 @@
   width: 40px;
   height: 40px;
   background-color: transparent;
-  color: #B12E10;
+  color: #747474;
   border: none;
   outline: none;
   cursor: pointer;
@@ -246,16 +246,12 @@
   }
 }
 .playList {
-  background-color: #F2B705;
-  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .playList .searchTitle {
-  z-index: 3;
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F2B705;
 }
 @media (max-width: 480px) {
   .playList .searchTitle {
@@ -273,11 +269,11 @@
 @media (min-width: 1024px) {
   .playList .searchTitle {
     grid-area: playList;
-    width: 320px;
-    height: 70px;
+    width: 280px;
+    height: 40px;
     top: 0;
     left: 0;
-    padding: 0 20px;
+    padding-bottom: 18px;
     box-sizing: border-box;
   }
 }
@@ -285,13 +281,13 @@
   margin: 0;
   font-size: 20px;
   font-weight: 400;
-  color: #B12E10;
+  color: #747474;
 }
 .playList .searchTitle button {
   width: auto;
   height: 40px;
   background-color: transparent;
-  color: #B12E10;
+  color: #747474;
   border: none;
   outline: none;
   cursor: pointer;
@@ -304,24 +300,23 @@
   line-height: 20px;
 }
 .playList .searchInput {
-  transition: 0.3s;
-  position: absolute;
-  z-index: 2;
+  margin-top: -10px;
+  height: 55px;
+  display: none;
 }
 .playList .searchInput input {
   width: 85vw;
   height: 40px;
-  background-color: #F2B705;
-  color: #B12E10;
+  background-color: transparent;
+  color: #747474;
   font-size: 16px;
   border: none;
-  border-bottom: 2px solid #B12E10;
+  border-bottom: 2px solid #747474;
   outline: none;
   padding: 0;
-  box-sizing: border-box;
 }
 .playList .searchInput input::placeholder {
-  color: #B12E10;
+  color: #747474;
   opacity: 0.6;
 }
 @media (min-width: 480px) and (max-width: 768px) {
@@ -335,22 +330,6 @@
     box-sizing: border-box;
   }
 }
-@media (max-width: 480px) {
-  .playList .searchInput {
-    top: 5px;
-  }
-}
-@media (min-width: 480px) and (max-width: 768px) {
-  .playList .searchInput {
-    top: 20px;
-  }
-}
-@media (min-width: 1024px) {
-  .playList .searchInput {
-    top: 20px;
-    left: 20px;
-  }
-}
 .playList .containerList {
   overflow-x: auto;
   display: grid;
@@ -358,22 +337,21 @@
   box-sizing: border-box;
   transition: 0.3s;
   overflow-y: auto;
+  position: relative;
 }
 .playList .containerList::-webkit-scrollbar {
   width: 0;
 }
 @media (max-width: 480px) {
   .playList .containerList {
-    max-height: 620px;
-    padding-top: 50px;
+    max-height: 570px;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .playList .containerList {
-    max-height: 620px;
-    padding-top: 65px;
+    max-height: 560px;
     width: calc(80vw - 40px);
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
@@ -381,16 +359,15 @@
 }
 @media (min-width: 1024px) {
   .playList .containerList {
-    max-height: 470px;
+    max-height: 430px;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding-top: 50px;
   }
 }
 .playList .containerList .itemList {
   width: calc((85vw - 8px) / 2);
   height: calc((85vw - 8px) / 2 + 50px);
-  background-color: #B12E10;
+  background-color: #747474;
   color: #cccccc;
   border: none;
   outline: none;
@@ -409,7 +386,7 @@
 }
 .playList .containerList .itemList:hover {
   background-color: #cccccc;
-  color: #B12E10;
+  color: #747474;
 }
 .playList .containerList .itemList .playing {
   position: absolute;
@@ -426,7 +403,7 @@
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .playList .containerList .itemList .playing .bar {
-  background-color: #B12E10;
+  background-color: #747474;
   width: 3px;
   animation: sound 2s ease-in-out infinite;
   transform: scale(0);
@@ -551,7 +528,11 @@
 }
 
 body {
-  background-color: #FFD800;
+  background-image: url("https://static.qobuz.com/images/covers/ra/gu/w4jwafymtgura_600.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(20px);
   margin: 0;
   display: flex;
   justify-content: center;
@@ -561,7 +542,7 @@ body {
 @media (max-width: 480px) {
   body {
     padding: 60px 0;
-    background-color: #F2B705;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
