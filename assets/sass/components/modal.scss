@@ -14,8 +14,8 @@
   z-index: 10;
   transform: scale(0);
   transition: 0.5s;
-  .containerSearch {
-    background-color: $black;
+  .containerModal {
+    background-color: $bg-tertiary;
     @include mobiles {
       width: 85vw;
       height: calc(100vh - 120px);

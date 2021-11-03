@@ -4,6 +4,7 @@
 
 let $modal = document.querySelector('#modal')
 let $container = document.querySelector('#container')
+let $closed = document.querySelector('#closed')
 
 function toShowModal(inputShow){
   if(inputShow){
@@ -19,7 +20,7 @@ function toShowModal(inputShow){
   }
 }
 
-$modal.addEventListener('click',function(){
+$closed.addEventListener('click',function(){
   toShowModal(false)
 }, false)
 
