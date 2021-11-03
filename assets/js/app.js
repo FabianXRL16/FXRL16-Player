@@ -118,9 +118,16 @@ function showPlayList(){
     $title.appendChild($p)
     $btn.appendChild($img)
     $btn.appendChild($title)
+    $btn.addEventListener('click',function(){
+      listenSong(item.img)
+    })
     $container.appendChild($btn)
   })
-
 }
 
 showPlayList()
+
+function listenSong(img){
+  $body = document.querySelector('body')
+  $body.style.backgroundImage = `url(${img})`
+}
