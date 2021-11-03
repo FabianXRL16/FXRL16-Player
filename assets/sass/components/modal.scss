@@ -3,9 +3,28 @@
 @import "../utils/mixins.scss";
 @import "../utils/animations.scss";
 
-.modal{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transform: scale(0);
+  transition: .3s;
+  .containerSearch {
+    background-color: $black;
+    @include mobiles {
+      width: 85vw;
+      height: 500px;
+    }
+    @include tablets {
+    }
+    @include desktops {
+      width: 1060px;
+      height: 516px;
+    }
+  }
 }

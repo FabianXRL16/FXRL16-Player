@@ -21,6 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  position: relative;
   @include tablets {
     padding: 50px 0;
   }
@@ -33,7 +34,6 @@ body {
 .container {
   height: auto;
   display: grid;
-  position: relative;
   @include mobiles {
     width: 100vw;
     grid-template-rows: calc(85vw*0.5625) 80px 1fr;
