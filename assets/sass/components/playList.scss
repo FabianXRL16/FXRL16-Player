@@ -5,14 +5,10 @@
 
 .playList {
   background-color: $bg-tertiary;
-  position: relative;
   .searchTitle {
-    z-index: 3;
-    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $bg-tertiary;
     @include mobiles {
       width: 85vw;
       height: 50px;
@@ -24,11 +20,11 @@
     }
     @include desktops {
       grid-area: playList;
-      width: 320px;
-      height: 70px;
+      width: 280px;
+      height: 40px;
       top: 0;
       left: 0;
-      padding: 0 20px;
+      padding-bottom: 18px;
       box-sizing: border-box;
     }
     h1 {
@@ -42,22 +38,18 @@
     }
   }
   .searchInput {
-    transition: 0.3s;
-    position: absolute;
-    z-index: 2;
+    margin-top: -10px;
+    height: 55px;
+    display: none;
     input {
       @include input(
         $w: 85vw,
         $h: 40px,
         $c: $bg-secondary,
         $fs: 16px,
-        $bg: $bg-tertiary,
         $b: 2px,
         $cb: $bg-secondary
       );
-      box-sizing: border-box;
-      @include mobiles {
-      }
       @include tablets {
         width: calc(80vw - 40px);
       }
@@ -66,17 +58,43 @@
         box-sizing: border-box;
       }
     }
-    @include mobiles {
-      top: 5px;
-    }
-    @include tablets {
-      top: 20px;
-    }
-    @include desktops {
-      top: 20px;
-      left: 20px;
-    }
   }
+  // .searchInput {
+  //   transition: 0.3s;
+  //   position: absolute;
+  //   z-index: 2;
+  //   input {
+  //     @include input(
+  //       $w: 85vw,
+  //       $h: 40px,
+  //       $c: $bg-secondary,
+  //       $fs: 16px,
+  //       $bg: $bg-tertiary,
+  //       $b: 2px,
+  //       $cb: $bg-secondary
+  //     );
+  //     box-sizing: border-box;
+  //     @include mobiles {
+  //     }
+  //     @include tablets {
+  //       width: calc(80vw - 40px);
+  //     }
+  //     @include desktops {
+  //       width: 280px;
+  //       box-sizing: border-box;
+  //     }
+  //   }
+  //   @include mobiles {
+  //     top: 5px;
+  //   }
+  //   @include tablets {
+  //     top: 20px;
+  //   }
+  //   @include desktops {
+  //     top: 20px;
+  //     left: 20px;
+  //   }
+  // }
   .containerList {
     overflow-x: auto;
     display: grid;
@@ -84,27 +102,25 @@
     box-sizing: border-box;
     transition: 0.3s;
     overflow-y: auto;
+    position: relative;
     &::-webkit-scrollbar {
       width: 0;
     }
     @include mobiles {
-      max-height: 620px;
-      padding-top: 50px;
+      max-height: 570px;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
     }
     @include tablets {
-      max-height: 620px;
-      padding-top: 65px;
+      max-height: 560px;
       width: calc(80vw - 40px);
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
     }
     @include desktops {
-      max-height: 470px;
+      max-height: 430px;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      padding-top: 50px;
     }
     .itemList {
       @include btn(
