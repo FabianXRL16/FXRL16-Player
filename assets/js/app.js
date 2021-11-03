@@ -3,14 +3,19 @@
 // console.log(init)
 
 let $modal = document.querySelector('#modal')
+let $container = document.querySelector('#container')
 
 function toShowModal(inputShow){
   if(inputShow){
     $modal.style.transform = 'scale(1)';
-    $modal.style.transition = '.3s';
+    $modal.style.transition = '.5s';
+    $container.style.transform = 'scale(0)';
+    $container.style.transition = '.5s';
   }else{
     $modal.style.transform = 'scale(0)';
-    $modal.style.transition = '.3s';
+    $modal.style.transition = '.5s';
+    $container.style.transform = 'scale(1)';
+    $container.style.transition = '.5s';
   }
 }
 

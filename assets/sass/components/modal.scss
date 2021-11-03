@@ -13,14 +13,16 @@
   align-items: center;
   z-index: 10;
   transform: scale(0);
-  transition: .3s;
+  transition: 0.5s;
   .containerSearch {
     background-color: $black;
     @include mobiles {
       width: 85vw;
-      height: 500px;
+      height: calc(100vh - 120px);
     }
     @include tablets {
+      width: 80vw;
+      height: calc(100vh - 100px);
     }
     @include desktops {
       width: 1060px;
