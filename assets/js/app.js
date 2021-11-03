@@ -2,7 +2,21 @@
 
 // console.log(init)
 
-let inputShow = true;
+let $modal = document.querySelector('#modal')
+
+function toShowModal(inputShow){
+  if(inputShow){
+    $modal.style.transform = 'scale(1)';
+    $modal.style.transition = '.3s';
+  }else{
+    $modal.style.transform = 'scale(0)';
+    $modal.style.transition = '.3s';
+  }
+}
+
+$modal.addEventListener('click',function(){
+  toShowModal(false)
+}, false)
 
 let $video = document.querySelector("video");
 let $play = document.querySelector("#play");
