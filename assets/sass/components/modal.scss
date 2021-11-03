@@ -16,6 +16,10 @@
   transition: 0.5s;
   .containerModal {
     background-color: $bg-tertiary;
+    display: grid;
+    grid-template-areas: "search" "results" "playList";
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 1.5fr;
     @include mobiles {
       width: 85vw;
       height: calc(100vh - 120px);
@@ -27,6 +31,101 @@
     @include desktops {
       width: 1060px;
       height: 516px;
+      grid-template-areas: "search search" "results playList";
+      grid-template-columns: 1fr 320px;
+      grid-template-rows: 70px 1fr;
+    }
+    .containerSearch {
+      grid-area: search;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      gap: 20px;
+      input {
+        @include input(
+          $w: 100%,
+          $h: 30px,
+          $bg: transparent,
+          $c: $bg-secondary,
+          $fs: 20px,
+          $b: 2px,
+          $cb: $bg-secondary
+        );
+        width: 100%;
+        height: 30px;
+      }
+      .btnSearch {
+        @include btn(
+          $w: 30px,
+          $h: 32px,
+          $bg: transparent,
+          $c: $bg-secondary,
+          $i-fs: 20px,
+          $btn: false
+        );
+        transform: scale(1);
+        transition: 0.3s;
+        &:hover{
+            transform: scale(.95);
+            transition: .3s;
+        }
+        span {
+          display: none;
+        }
+        @include desktops {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 15px;
+          width: 135px;
+          background-color: $lightBlue;
+          color: $white;
+          i {
+            font-size: 16px;
+          }
+          span {
+            font-size: 17px;
+            display: block;
+          }
+        }
+      }
+      .btnClosed {
+        @include btn(
+          $w: 40px,
+          $h: 32px,
+          $bg: $red,
+          $c: $white,
+          $i-fs: 20px,
+          $btn: false
+        );
+        transform: scale(1);
+        transition: 0.3s;
+        &:hover{
+            transform: scale(.95);
+            transition: .3s;
+        }
+        @include mobiles {
+          width: 45px;
+        }
+      }
+    }
+    .containerResults {
+      grid-area: results;
+      background-color: chocolate;
+      .itemResult {
+        background-color: red;
+        width: 100px;
+        height: 80px;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    .containerPlayList {
+      grid-area: playList;
+      background-color: darkgoldenrod;
     }
   }
 }

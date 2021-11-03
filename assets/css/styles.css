@@ -574,6 +574,10 @@
 }
 .modal .containerModal {
   background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-areas: "search" "results" "playList";
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr 1.5fr;
 }
 @media (max-width: 480px) {
   .modal .containerModal {
@@ -591,7 +595,122 @@
   .modal .containerModal {
     width: 1060px;
     height: 516px;
+    grid-template-areas: "search search" "results playList";
+    grid-template-columns: 1fr 320px;
+    grid-template-rows: 70px 1fr;
   }
+}
+.modal .containerModal .containerSearch {
+  grid-area: search;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
+}
+.modal .containerModal .containerSearch input {
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  color: #cfcfcf;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid #cfcfcf;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  height: 30px;
+}
+.modal .containerModal .containerSearch input::placeholder {
+  color: #cfcfcf;
+  opacity: 0.6;
+}
+.modal .containerModal .containerSearch .btnSearch {
+  width: 30px;
+  height: 32px;
+  background-color: transparent;
+  color: #cfcfcf;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s;
+  padding: 0;
+  margin: 0;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.modal .containerModal .containerSearch .btnSearch i {
+  font-size: 20px;
+  line-height: 20px;
+}
+.modal .containerModal .containerSearch .btnSearch:hover {
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+.modal .containerModal .containerSearch .btnSearch span {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .modal .containerModal .containerSearch .btnSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    width: 135px;
+    background-color: #014f74;
+    color: #ffffff;
+  }
+  .modal .containerModal .containerSearch .btnSearch i {
+    font-size: 16px;
+  }
+  .modal .containerModal .containerSearch .btnSearch span {
+    font-size: 17px;
+    display: block;
+  }
+}
+.modal .containerModal .containerSearch .btnClosed {
+  width: 40px;
+  height: 32px;
+  background-color: #C70039;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s;
+  padding: 0;
+  margin: 0;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.modal .containerModal .containerSearch .btnClosed i {
+  font-size: 20px;
+  line-height: 20px;
+}
+.modal .containerModal .containerSearch .btnClosed:hover {
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+@media (max-width: 480px) {
+  .modal .containerModal .containerSearch .btnClosed {
+    width: 45px;
+  }
+}
+.modal .containerModal .containerResults {
+  grid-area: results;
+  background-color: chocolate;
+}
+.modal .containerModal .containerResults .itemResult {
+  background-color: red;
+  width: 100px;
+  height: 80px;
+}
+.modal .containerModal .containerResults .itemResult img {
+  width: 20px;
+  height: 20px;
+}
+.modal .containerModal .containerPlayList {
+  grid-area: playList;
+  background-color: darkgoldenrod;
 }
 
 body {
