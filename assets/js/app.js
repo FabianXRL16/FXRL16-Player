@@ -131,3 +131,43 @@ function listenSong(img){
   $body = document.querySelector('body')
   $body.style.backgroundImage = `url(${img})`
 }
+
+function showResults(){
+  let $container = document.querySelector('.containerResults')
+  playList.map(item => {
+    let $item = document.createElement("DIV")
+    $item.classList.add('itemResult')
+
+    let $img = document.createElement("IMG")
+    $img.src= item.img
+
+    let $title = document.createElement("DIV")
+    $title.classList.add('titleResult')
+
+    let $h2 = document.createElement("H2")
+    let $p = document.createElement("P")
+
+    let nameSong = document.createTextNode(item.title)
+    let singer = document.createTextNode(item.singer)
+
+    $h2.appendChild(nameSong)
+    $p.appendChild(singer)
+
+    $title.appendChild($h2)
+    $title.appendChild($p)
+
+    let $btn = document.createElement("BUTTON")
+    let $icon = document.createElement("I")
+    $icon.classList.add('fas')
+    $icon.classList.add('fa-plus')
+    $btn.appendChild($icon)
+    $btn.addEventListener('click',function(){
+      console.log("hola")
+    })
+
+    $item.appendChild($img)
+    $item.appendChild($title)
+    $item.appendChild($btn)
+    $container.appendChild($item)
+  })
+}
