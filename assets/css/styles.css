@@ -776,6 +776,37 @@
   transform: scale(0.8);
   transition: 0.1s;
 }
+.modal .containerModal .containerResults .noResults {
+  margin: auto auto;
+  color: #ffffff;
+  text-align: center;
+}
+.modal .containerModal .containerResults .noResults i {
+  font-size: 80px;
+}
+.modal .containerModal .containerResults .noResults p {
+  font-size: 20px;
+  margin: 20px 0 0;
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .modal .containerModal .containerResults .noResults i {
+    font-size: 70px;
+  }
+  .modal .containerModal .containerResults .noResults p {
+    font-size: 20px;
+    margin: 10px 0 0;
+  }
+}
+.modal .containerModal .containerResults .default {
+  font-size: 80px;
+  color: #ffffff;
+  margin: auto auto;
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .modal .containerModal .containerResults .default {
+    font-size: 70px;
+  }
+}
 .modal .containerModal .containerPlayList {
   grid-area: playList;
   background-color: rgba(0, 0, 0, 0.7);
