@@ -12,6 +12,12 @@ function toShowModal(inputShow){
     $modal.style.transition = '.5s';
     $container.style.transform = 'scale(0)';
     $container.style.transition = '.5s';
+    $default.style.display = "block"
+    let $itemResult = document.querySelectorAll('.itemResult')
+    if($itemResult){
+      $itemResult.forEach(i => $containerResults.removeChild(i))
+    }
+    
   }else{
     $modal.style.transform = 'scale(0)';
     $modal.style.transition = '.5s';
@@ -96,8 +102,9 @@ let playList = [
   }
 ]
 
+let $containerList = document.querySelector('.containerList')
+
 function showPlayList(){
-  let $container = document.querySelector('.containerList')
   playList.map(item => {
     let $btn = document.createElement("BUTTON")
     $btn.classList.add('itemList')
@@ -121,7 +128,7 @@ function showPlayList(){
     $btn.addEventListener('click',function(){
       listenSong(item.img)
     })
-    $container.appendChild($btn)
+    $containerList.appendChild($btn)
   })
 }
 
@@ -132,9 +139,10 @@ function listenSong(img){
   $body.style.backgroundImage = `url(${img})`
 }
 
-function showResults(){
-  let $container = document.querySelector('.containerResults')
-  playList.map(item => {
+let $containerResults = document.querySelector('.containerResults')
+
+function showResults(list){
+  list.map(item => {
     let $item = document.createElement("DIV")
     $item.classList.add('itemResult')
 
@@ -168,6 +176,77 @@ function showResults(){
     $item.appendChild($img)
     $item.appendChild($title)
     $item.appendChild($btn)
-    $container.appendChild($item)
+    $containerResults.appendChild($item)
   })
+}
+
+let $input = document.querySelector('#input')
+let $default = document.querySelector('.default')
+
+let stateNoResult = false
+
+function findSong(toSearch){
+  return playList.filter(i=> i.singer.includes(toSearch))
+}
+
+function search(){
+  try {
+    $default.style.display = "none"
+    let inputValue = $input.value
+    let results = findSong(inputValue)
+    if(results.length ===  0){
+      noResult()
+    }else{
+      showResults(results)
+    }
+    
+  } catch (error) {
+    console.error(error)
+  }finally{
+    $input.value = ""
+  }
+  // try {
+  //   let result = playList.filter(i=> i.singer.includes(singer))
+  //   console.log(result)
+  //   if(stateNoResult){
+  //     let $noResults = document.querySelector('.noResults')
+  //     $containerResults.removeChild($noResults)
+  //     let $itemResult = document.querySelectorAll('.itemResult')
+  //     if($itemResult){
+  //     $itemResult.forEach(i => $containerResults.removeChild(i))
+  //     stateNoResult = false
+  //   }
+  //   }
+  //   if(result.length === 0){
+  //     noResult()
+  //   }else{
+  //     showResults(result)
+  //     result = []
+  //   }
+  // } catch (err) {
+  //   console.error(err)
+  //   noResult()
+  // }finally{
+  // }
+}
+
+function noResult(){
+  let $item = document.createElement("DIV")
+  $item.classList.add('noResults')
+
+  let $icon = document.createElement("I")
+  let $p = document.createElement("P")
+
+  $icon.classList.add('far')
+  $icon.classList.add('fa-dizzy')
+
+  let msg = document.createTextNode('without results')
+
+  $p.appendChild(msg)
+
+  $item.appendChild($icon)
+  $item.appendChild($p)
+  $containerResults.appendChild($item)
+
+  stateNoResult = true
 }
