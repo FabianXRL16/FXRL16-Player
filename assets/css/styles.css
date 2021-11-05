@@ -777,6 +777,7 @@
   transition: 0.1s;
 }
 .modal .containerModal .containerResults .noResults {
+  display: none;
   margin: auto auto;
   color: #ffffff;
   text-align: center;
