@@ -62,11 +62,17 @@
     <div class="containerModal">
       <div class="containerSearch">
         <input id="input" type="text" placeholder="Search song ...." />
-        <button class="btnSearch" onclick="showResults()"><span>Search</span> <i class="fas fa-search"></i></button>
+        <button class="btnSearch" onclick="search()"><span>Search</span> <i class="fas fa-search"></i></button>
         <button id="closed" class="btnClosed"><i class="fas fa-times"></i></button>
       </div>
       <div class="containerResults" id="containerResults">
-        
+        <!-- <div class="noResults">
+          <i class="far fa-dizzy"></i>
+          <p>without results</p>
+        </div> -->
+        <div class="default">
+          <i class="fab fa-youtube"></i>
+        </div>
       </div>
       <div class="containerPlayList">
         <div class="titlePlay">
