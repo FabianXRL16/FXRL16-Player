@@ -192,6 +192,12 @@ function findSong(toSearch) {
   return playList.filter((i) => i.singer.toLowerCase().includes(toSearch));
 }
 
+$input.addEventListener('keyup', (e)=>{
+  if(e.keyCode === 13){
+    search();
+  }
+})
+
 let results = [];
 
 function search() {
