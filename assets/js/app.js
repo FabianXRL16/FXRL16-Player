@@ -146,6 +146,8 @@ function listenSong(img) {
 
 let $containerResults = document.querySelector(".containerResults");
 
+let playListModal = [];
+
 function showResults(list) {
   list.map((item) => {
     let $item = document.createElement("DIV");
@@ -174,8 +176,10 @@ function showResults(list) {
     $icon.classList.add("fas");
     $icon.classList.add("fa-plus");
     $btn.appendChild($icon);
+
     $btn.addEventListener("click", function () {
-      console.log("hola");
+      playListModal.push(item);
+      showPlayListModal(playListModal);
     });
 
     $item.appendChild($img);
@@ -250,6 +254,10 @@ function noResult() {
 let $containerSongs = document.querySelector(".containerSongs");
 
 function showPlayListModal(list) {
+  let $itemSong = document.querySelectorAll(".itemSong");
+  if ($itemSong) {
+    $itemSong.forEach((i) => $containerSongs.removeChild(i));
+  }
   list.map((item) => {
     let $div = document.createElement("DIV");
     $div.classList.add("itemSong");
@@ -273,12 +281,12 @@ function showPlayListModal(list) {
     $title.appendChild($h2);
     $title.appendChild($p);
 
-    $btn = document.createElement("BUTTON")
-    $icon = document.createElement("I")
-    $icon.classList.add("fas")
-    $icon.classList.add("fa-minus")
+    $btn = document.createElement("BUTTON");
+    $icon = document.createElement("I");
+    $icon.classList.add("fas");
+    $icon.classList.add("fa-minus");
 
-    $btn.appendChild($icon)
+    $btn.appendChild($icon);
 
     $div.appendChild($img);
     $div.appendChild($title);
@@ -286,5 +294,3 @@ function showPlayListModal(list) {
     $containerSongs.appendChild($div);
   });
 }
-
-showPlayListModal(playList)
