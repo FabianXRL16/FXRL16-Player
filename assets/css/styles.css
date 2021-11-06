@@ -959,6 +959,7 @@
   transition: 0.3s;
 }
 .modal .containerModal .containerPlayList .containerSongs .withoutList {
+  z-index: 10;
   display: none;
   position: absolute;
   display: flex;
