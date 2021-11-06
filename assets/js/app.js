@@ -258,7 +258,7 @@ function showPlayListModal(list) {
   if ($itemSong) {
     $itemSong.forEach((i) => $containerSongs.removeChild(i));
   }
-  list.map((item) => {
+  list.map((item,i) => {
     let $div = document.createElement("DIV");
     $div.classList.add("itemSong");
 
@@ -287,6 +287,10 @@ function showPlayListModal(list) {
     $icon.classList.add("fa-minus");
 
     $btn.appendChild($icon);
+    $btn.addEventListener("click", function () {
+      playListModal.splice(i, 1)
+      showPlayListModal(playListModal);
+    });
 
     $div.appendChild($img);
     $div.appendChild($title);
