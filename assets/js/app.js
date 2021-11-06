@@ -109,8 +109,8 @@ let playList = [
 
 let $containerList = document.querySelector(".containerList");
 
-function showPlayList() {
-  playList.map((item) => {
+function showPlayList(list) {
+  list.map((item) => {
     let $btn = document.createElement("BUTTON");
     $btn.classList.add("itemList");
     let $img = document.createElement("DIV");
@@ -137,7 +137,7 @@ function showPlayList() {
   });
 }
 
-showPlayList();
+showPlayList(playList);
 
 function listenSong(img) {
   $body = document.querySelector("body");
@@ -246,3 +246,45 @@ function noResult() {
   $item.appendChild($p);
   $containerResults.appendChild($item);
 }
+
+let $containerSongs = document.querySelector(".containerSongs");
+
+function showPlayListModal(list) {
+  list.map((item) => {
+    let $div = document.createElement("DIV");
+    $div.classList.add("itemSong");
+
+    let $img = document.createElement("DIV");
+    $img.classList.add("itemImg");
+    $img.style.backgroundImage = `url(${item.img})`;
+
+    let $title = document.createElement("DIV");
+    $title.classList.add("titleSong");
+
+    let $h2 = document.createElement("H2");
+    let $p = document.createElement("P");
+
+    let nameSong = document.createTextNode(item.title);
+    let singer = document.createTextNode(item.singer);
+
+    $h2.appendChild(nameSong);
+    $p.appendChild(singer);
+
+    $title.appendChild($h2);
+    $title.appendChild($p);
+
+    $btn = document.createElement("BUTTON")
+    $icon = document.createElement("I")
+    $icon.classList.add("fas")
+    $icon.classList.add("fa-minus")
+
+    $btn.appendChild($icon)
+
+    $div.appendChild($img);
+    $div.appendChild($title);
+    $div.appendChild($btn);
+    $containerSongs.appendChild($div);
+  });
+}
+
+showPlayListModal(playList)
