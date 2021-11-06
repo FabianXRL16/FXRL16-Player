@@ -785,7 +785,7 @@
 .modal .containerModal .containerResults .noResults {
   display: none;
   margin: auto auto;
-  color: #ffffff;
+  color: #cfcfcf;
   text-align: center;
 }
 .modal .containerModal .containerResults .noResults i {
@@ -806,7 +806,7 @@
 }
 .modal .containerModal .containerResults .default {
   font-size: 80px;
-  color: #ffffff;
+  color: #cfcfcf;
   margin: auto auto;
 }
 @media (min-width: 480px) and (max-width: 768px) {

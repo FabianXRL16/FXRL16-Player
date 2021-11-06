@@ -170,7 +170,7 @@
       .noResults{
         display: none;
         margin: auto auto;
-        color: $white;
+        color: $bg-secondary;
         text-align: center;
         i{
           font-size: 80px;
@@ -191,7 +191,7 @@
       }
       .default{
         font-size:80px;
-        color: $white;
+        color: $bg-secondary;
         margin: auto auto;
         @include tablets{
           font-size: 70px;
