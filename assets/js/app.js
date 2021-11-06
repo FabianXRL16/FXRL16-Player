@@ -180,6 +180,8 @@ function showResults(list) {
     $btn.addEventListener("click", function () {
       playListModal.push(item);
       showPlayListModal(playListModal);
+      let empyList = document.querySelector(".withoutList");
+      empyList.style.display = "none";
     });
 
     $item.appendChild($img);
@@ -258,7 +260,7 @@ function showPlayListModal(list) {
   if ($itemSong) {
     $itemSong.forEach((i) => $containerSongs.removeChild(i));
   }
-  list.map((item,i) => {
+  list.map((item, i) => {
     let $div = document.createElement("DIV");
     $div.classList.add("itemSong");
 
@@ -288,7 +290,13 @@ function showPlayListModal(list) {
 
     $btn.appendChild($icon);
     $btn.addEventListener("click", function () {
-      playListModal.splice(i, 1)
+      playListModal.splice(i, 1);
+      let empyList = document.querySelector(".withoutList");
+      if (playListModal.length === 0) {
+        empyList.style.display = "flex";
+      } else {
+        empyList.style.display = "none";
+      }
       showPlayListModal(playListModal);
     });
 
