@@ -712,6 +712,7 @@
   gap: 10px;
   overflow-x: auto;
   padding: 20px;
+  min-height: 120px;
 }
 .modal .containerModal .containerResults::-webkit-scrollbar {
   width: 0;
@@ -822,7 +823,7 @@
   grid-area: playList;
   background-color: rgba(0, 0, 0, 0.7);
   overflow-x: auto;
-  padding: 0 20px;
+  padding: 0 20px 20px;
 }
 .modal .containerModal .containerPlayList .titlePlay {
   height: 70px;
