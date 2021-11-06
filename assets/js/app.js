@@ -13,6 +13,8 @@ function toShowModal(inputShow) {
     $container.style.transform = "scale(0)";
     $container.style.transition = ".5s";
     $default.style.display = "block";
+    $noResults.style.display = "none";
+    $input.value = ''
     let $itemResult = document.querySelectorAll(".itemResult");
     if ($itemResult) {
       $itemResult.forEach((i) => $containerResults.removeChild(i));
