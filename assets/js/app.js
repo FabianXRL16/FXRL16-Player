@@ -181,7 +181,8 @@ function showResults(list) {
       playListModal.push(item);
       showPlayListModal(playListModal);
       let empyList = document.querySelector(".withoutList");
-      empyList.style.display = "none";
+      empyList.style.transform = "scale(0)"
+        empyList.style.transition = ".5s"
     });
 
     $item.appendChild($img);
@@ -293,9 +294,11 @@ function showPlayListModal(list) {
       playListModal.splice(i, 1);
       let empyList = document.querySelector(".withoutList");
       if (playListModal.length === 0) {
-        empyList.style.display = "flex";
+        empyList.style.transform = "scale(1)"
+        empyList.style.transition = ".5s"
       } else {
-        empyList.style.display = "none";
+        empyList.style.transform = "scale(0)"
+        empyList.style.transition = ".5s"
       }
       showPlayListModal(playListModal);
     });
