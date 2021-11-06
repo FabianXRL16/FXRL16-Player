@@ -901,7 +901,7 @@
 }
 .modal .containerModal .containerPlayList .containerSongs .itemSong .titleSong {
   height: 50px;
-  background-color: #0f0f0f;
+  background-color: #070707;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
