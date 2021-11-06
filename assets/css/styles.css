@@ -589,6 +589,7 @@
 @media (max-width: 480px) {
   .modal .containerModal {
     width: 85vw;
+    grid-template-rows: 70px 1fr 1.85fr;
     height: calc(100vh - 120px);
   }
 }
@@ -817,6 +818,65 @@
 .modal .containerModal .containerPlayList {
   grid-area: playList;
   background-color: rgba(0, 0, 0, 0.7);
+  overflow-x: auto;
+  padding: 0 20px;
+}
+.modal .containerModal .containerPlayList .titlePlay {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal .containerModal .containerPlayList .titlePlay h2 {
+  color: #cfcfcf;
+  margin: 0;
+  font-size: 20px;
+}
+.modal .containerModal .containerPlayList .titlePlay button {
+  width: 30px;
+  height: 32px;
+  background-color: transparent;
+  color: #cfcfcf;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s;
+  padding: 0;
+  margin: 0;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.modal .containerModal .containerPlayList .titlePlay button i {
+  font-size: 20px;
+  line-height: 20px;
+}
+.modal .containerModal .containerPlayList .titlePlay button:hover {
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+.modal .containerModal .containerPlayList .containerSongs {
+  background-color: brown;
+}
+@media (min-width: 1024px) {
+  .modal .containerModal .containerPlayList .containerSongs {
+    overflow-x: auto;
+    height: 336px;
+  }
+  .modal .containerModal .containerPlayList .containerSongs::-webkit-scrollbar {
+    width: 0;
+  }
+}
+.modal .containerModal .containerPlayList .containerSongs .itemSong {
+  background-color: rgba(2, 255, 36, 0.5);
+}
+.modal .containerModal .containerPlayList .containerSongs .itemSong .titleSong {
+  background-color: rgba(255, 74, 2, 0.5);
+}
+.modal .containerModal .containerPlayList .containerSongs .itemSong .titleSong h2 {
+  margin: 0;
+}
+.modal .containerModal .containerPlayList .containerSongs .itemSong .titleSong p {
+  margin: 0;
 }
 
 body {

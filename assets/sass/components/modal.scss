@@ -22,6 +22,7 @@
     gap: 20px;
     @include mobiles {
       width: 85vw;
+      grid-template-rows: 70px 1fr 1.85fr;
       height: calc(100vh - 120px);
     }
     @include tablets {
@@ -201,6 +202,57 @@
     .containerPlayList {
       grid-area: playList;
       background-color: $bg-tertiary;
+      overflow-x: auto;
+      padding: 0 20px;
+      .titlePlay{
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+          color: $bg-secondary;
+          margin: 0;
+          font-size: 20px;
+        }
+        button{
+          @include btn(
+            $w: 30px,
+            $h: 32px,
+            $bg: transparent,
+            $c: $bg-secondary,
+            $i-fs: 20px,
+            $btn: false
+          );
+          transform: scale(1);
+          transition: 0.3s;
+          &:hover {
+            transform: scale(0.95);
+            transition: 0.3s;
+          }
+        }
+      }
+      .containerSongs{
+        background-color: brown;
+        @include desktops{
+          overflow-x: auto;
+          height: 336px;
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+        .itemSong{
+           background-color:rgba(2, 255, 36, 0.5);
+          .titleSong{
+            background-color: rgba(255, 74, 2, .5);
+            h2{
+              margin: 0;
+            }
+            p{
+              margin: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
