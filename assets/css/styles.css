@@ -737,7 +737,8 @@
   width: 100%;
   color: #cfcfcf;
 }
-.modal .containerModal .containerResults .itemResult .titleResult h2, .modal .containerModal .containerResults .itemResult .titleResult p {
+.modal .containerModal .containerResults .itemResult .titleResult h2,
+.modal .containerModal .containerResults .itemResult .titleResult p {
   width: calc(85vw - 170px);
   margin: 0;
   font-size: 16px;
@@ -749,12 +750,14 @@
   line-height: 24px;
 }
 @media (min-width: 480px) and (max-width: 768px) {
-  .modal .containerModal .containerResults .itemResult .titleResult h2, .modal .containerModal .containerResults .itemResult .titleResult p {
+  .modal .containerModal .containerResults .itemResult .titleResult h2,
+.modal .containerModal .containerResults .itemResult .titleResult p {
     width: calc(85vw - 210px);
   }
 }
 @media (min-width: 1024px) {
-  .modal .containerModal .containerResults .itemResult .titleResult h2, .modal .containerModal .containerResults .itemResult .titleResult p {
+  .modal .containerModal .containerResults .itemResult .titleResult h2,
+.modal .containerModal .containerResults .itemResult .titleResult p {
     width: 540px;
   }
 }
@@ -932,6 +935,26 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: #C70039;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s;
+  padding: 0;
+  margin: 0;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.modal .containerModal .containerPlayList .containerSongs .itemSong button i {
+  font-size: 10px;
+  line-height: 10px;
+}
+.modal .containerModal .containerPlayList .containerSongs .itemSong button:hover {
+  transform: scale(0.8);
+  transition: 0.3s;
 }
 
 body {

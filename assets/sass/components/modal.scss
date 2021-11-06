@@ -142,7 +142,8 @@
         .titleResult {
           width: 100%;
           color: $bg-secondary;
-          h2, p {
+          h2,
+          p {
             @include title($w: calc(85vw - 170px), $m: 0, $fs: 16px, $fw: 600);
             line-height: 24px;
             @include tablets {
@@ -168,33 +169,33 @@
           );
         }
       }
-      .noResults{
+      .noResults {
         display: none;
         margin: auto auto;
         color: $bg-secondary;
         text-align: center;
-        i{
+        i {
           font-size: 80px;
         }
-        p{
+        p {
           font-size: 20px;
           margin: 20px 0 0;
         }
-        @include tablets{
-          i{
+        @include tablets {
+          i {
             font-size: 70px;
           }
-          p{
+          p {
             font-size: 20px;
             margin: 10px 0 0;
           }
         }
       }
-      .default{
-        font-size:80px;
+      .default {
+        font-size: 80px;
         color: $bg-secondary;
         margin: auto auto;
-        @include tablets{
+        @include tablets {
           font-size: 70px;
         }
       }
@@ -204,17 +205,17 @@
       background-color: $bg-tertiary;
       overflow-x: auto;
       padding: 0 20px;
-      .titlePlay{
+      .titlePlay {
         height: 70px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        h2{
+        h2 {
           color: $bg-secondary;
           margin: 0;
           font-size: 20px;
         }
-        button{
+        button {
           @include btn(
             $w: 30px,
             $h: 32px,
@@ -231,38 +232,38 @@
           }
         }
       }
-      .containerSongs{
+      .containerSongs {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 8px;
         box-sizing: border-box;
-        @include tablets{
+        @include tablets {
           grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
         }
-        @include desktops{
+        @include desktops {
           overflow-x: auto;
           height: 336px;
           &::-webkit-scrollbar {
             width: 0;
           }
         }
-        .itemSong{
+        .itemSong {
           height: 150px;
           position: relative;
-          @include desktops{
+          @include desktops {
             height: 186px;
           }
-          .itemImg{
+          .itemImg {
             width: 100%;
             height: 100px;
-            background-image: url('https://lastfm.freetls.fastly.net/i/u/300x300/c63984cd7a6f404bc0f4e1c3bc17e0c7.jpg');
+            background-image: url("https://lastfm.freetls.fastly.net/i/u/300x300/c63984cd7a6f404bc0f4e1c3bc17e0c7.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-            @include desktops{
+            @include desktops {
               height: 136px;
             }
-           }
-          .titleSong{
+          }
+          .titleSong {
             height: 50px;
             background-color: $black;
             padding: 0 10px;
@@ -270,21 +271,35 @@
             flex-direction: column;
             justify-content: center;
             color: $bg-secondary;
-            h2{
+            h2 {
               margin: 0;
-              @include title($w: 100%, $m: 0, $fs:14px);
+              @include title($w: 100%, $m: 0, $fs: 14px);
               line-height: 20px;
             }
-            p{
+            p {
               margin: 0;
-              @include title($w: 100%, $m: 0, $fs:11px, $fw: 300);
+              @include title($w: 100%, $m: 0, $fs: 11px, $fw: 300);
               line-height: 15px;
             }
           }
-          button{
+          button {
             position: absolute;
             top: 10px;
             right: 10px;
+            @include btn(
+              $w: 25px,
+              $h: 25px,
+              $bg: $red,
+              $c: $white,
+              $i-fs: 10px,
+              $btn: false
+            );
+            transform: scale(1);
+            transition: 0.3s;
+            &:hover {
+              transform: scale(0.8);
+              transition: 0.3s;
+            }
           }
         }
       }
