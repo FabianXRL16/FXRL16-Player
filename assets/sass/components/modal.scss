@@ -238,6 +238,7 @@
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 8px;
         box-sizing: border-box;
+        position: relative;
         @include tablets {
           grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
         }
@@ -301,6 +302,29 @@
               transform: scale(0.8);
               transition: 0.3s;
             }
+          }
+        }
+        .withoutList{
+          display: none;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+          margin: 40px 0 0;
+          color: $bg-secondary;
+          @include tablets{
+            margin: 10px 0;
+          }
+          @include desktops{
+            margin: 90px 0;
+          }
+          h2{
+            margin: 0;
+          }
+          i{
+            font-size: 70px;
           }
         }
       }

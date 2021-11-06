@@ -863,6 +863,7 @@
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 8px;
   box-sizing: border-box;
+  position: relative;
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .modal .containerModal .containerPlayList .containerSongs {
@@ -956,6 +957,33 @@
 .modal .containerModal .containerPlayList .containerSongs .itemSong button:hover {
   transform: scale(0.8);
   transition: 0.3s;
+}
+.modal .containerModal .containerPlayList .containerSongs .withoutList {
+  display: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 40px 0 0;
+  color: #cfcfcf;
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .modal .containerModal .containerPlayList .containerSongs .withoutList {
+    margin: 10px 0;
+  }
+}
+@media (min-width: 1024px) {
+  .modal .containerModal .containerPlayList .containerSongs .withoutList {
+    margin: 90px 0;
+  }
+}
+.modal .containerModal .containerPlayList .containerSongs .withoutList h2 {
+  margin: 0;
+}
+.modal .containerModal .containerPlayList .containerSongs .withoutList i {
+  font-size: 70px;
 }
 
 body {
