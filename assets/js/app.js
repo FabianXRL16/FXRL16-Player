@@ -14,7 +14,7 @@ function toShowModal(inputShow) {
     $container.style.transition = ".5s";
     $default.style.display = "block";
     $noResults.style.display = "none";
-    $input.value = ''
+    $input.value = "";
     let $itemResult = document.querySelectorAll(".itemResult");
     if ($itemResult) {
       $itemResult.forEach((i) => $containerResults.removeChild(i));
@@ -194,29 +194,31 @@ function findSong(toSearch) {
   return playList.filter((i) => i.singer.toLowerCase().includes(toSearch));
 }
 
-$input.addEventListener('keyup', (e)=>{
-  if(e.keyCode === 13){
+$input.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
     search();
   }
-})
+});
 
 let results = [];
 
 function search() {
   try {
-    results = [];
-    let $itemResult = document.querySelectorAll(".itemResult");
-    if ($itemResult) {
-      $itemResult.forEach((i) => $containerResults.removeChild(i));
-    }
-    $default.style.display = "none";
-    $noResults.style.display = "none";
     let inputValue = $input.value;
-    results = findSong(inputValue);
-    if (results.length === 0) {
-      $noResults.style.display = "block";
-    } else {
-      showResults(results);
+    if (inputValue) {
+      results = [];
+      let $itemResult = document.querySelectorAll(".itemResult");
+      if ($itemResult) {
+        $itemResult.forEach((i) => $containerResults.removeChild(i));
+      }
+      $default.style.display = "none";
+      $noResults.style.display = "none";
+      results = findSong(inputValue);
+      if (results.length === 0) {
+        $noResults.style.display = "block";
+      } else {
+        showResults(results);
+      }
     }
   } catch (error) {
     console.error(error);
