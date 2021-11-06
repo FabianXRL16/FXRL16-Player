@@ -232,7 +232,13 @@
         }
       }
       .containerSongs{
-        background-color: brown;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+        box-sizing: border-box;
+        @include tablets{
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        }
         @include desktops{
           overflow-x: auto;
           height: 336px;
@@ -241,15 +247,44 @@
           }
         }
         .itemSong{
-           background-color:rgba(2, 255, 36, 0.5);
+          height: 150px;
+          position: relative;
+          @include desktops{
+            height: 186px;
+          }
+          .itemImg{
+            width: 100%;
+            height: 100px;
+            background-image: url('https://lastfm.freetls.fastly.net/i/u/300x300/c63984cd7a6f404bc0f4e1c3bc17e0c7.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include desktops{
+              height: 136px;
+            }
+           }
           .titleSong{
-            background-color: rgba(255, 74, 2, .5);
+            height: 50px;
+            background-color: $black;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: $bg-secondary;
             h2{
               margin: 0;
+              @include title($w: 100%, $m: 0, $fs:14px);
+              line-height: 20px;
             }
             p{
               margin: 0;
+              @include title($w: 100%, $m: 0, $fs:11px, $fw: 300);
+              line-height: 15px;
             }
+          }
+          button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
           }
         }
       }
