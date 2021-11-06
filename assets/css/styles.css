@@ -63,6 +63,12 @@
     height: 40px;
   }
 }
+@media (min-width: 1024px) {
+  .song .album {
+    height: 50px;
+    width: 50px;
+  }
+}
 .song .title {
   color: #cfcfcf;
   padding-top: 12px;
@@ -380,7 +386,7 @@
 }
 @media (min-width: 1024px) {
   .playList .containerList {
-    max-height: 430px;
+    max-height: 435px;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
