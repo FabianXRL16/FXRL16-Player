@@ -116,8 +116,8 @@ let $containerList = document.querySelector(".containerList");
 
 function showPlayList(list) {
   let $withoutListMain = document.querySelector(".withoutListMain");
-  if(list.length > 0){
-    $withoutListMain.style.display = "none"
+  if (list.length > 0) {
+    $withoutListMain.style.display = "none";
     list.map((item) => {
       let $btn = document.createElement("BUTTON");
       $btn.classList.add("itemList");
@@ -143,8 +143,8 @@ function showPlayList(list) {
       });
       $containerList.appendChild($btn);
     });
-  }else{
-    $withoutListMain.style.display = "block"
+  } else {
+    $withoutListMain.style.display = "block";
   }
 }
 
@@ -190,8 +190,8 @@ function showResults(list) {
       playList.push(item);
       showPlayListModal(playList);
       let empyList = document.querySelector(".withoutList");
-      empyList.style.transform = "scale(0)"
-        empyList.style.transition = ".5s"
+      empyList.style.transform = "scale(0)";
+      empyList.style.transition = ".5s";
     });
 
     $item.appendChild($img);
@@ -303,11 +303,11 @@ function showPlayListModal(list) {
       playList.splice(i, 1);
       let empyList = document.querySelector(".withoutList");
       if (playList.length === 0) {
-        empyList.style.transform = "scale(1)"
-        empyList.style.transition = ".5s"
+        empyList.style.transform = "scale(1)";
+        empyList.style.transition = ".5s";
       } else {
-        empyList.style.transform = "scale(0)"
-        empyList.style.transition = ".5s"
+        empyList.style.transform = "scale(0)";
+        empyList.style.transition = ".5s";
       }
       showPlayListModal(playList);
     });
@@ -317,4 +317,8 @@ function showPlayListModal(list) {
     $div.appendChild($btn);
     $containerSongs.appendChild($div);
   });
+}
+
+function resetPlayList() {
+  playList = []
 }
