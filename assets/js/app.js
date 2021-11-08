@@ -115,31 +115,37 @@ let playListAux = [
 let $containerList = document.querySelector(".containerList");
 
 function showPlayList(list) {
-  list.map((item) => {
-    let $btn = document.createElement("BUTTON");
-    $btn.classList.add("itemList");
-    let $img = document.createElement("DIV");
-    $img.classList.add("img");
-    $img.style.backgroundImage = `url(${item.img})`;
-    let $title = document.createElement("DIV");
-    $title.classList.add("title");
-    let $h2 = document.createElement("H2");
-    $h2.classList.add("titleSong");
-    let $p = document.createElement("P");
-    $p.classList.add("singer");
-    let nameSong = document.createTextNode(item.title);
-    let singer = document.createTextNode(item.singer);
-    $h2.appendChild(nameSong);
-    $p.appendChild(singer);
-    $title.appendChild($h2);
-    $title.appendChild($p);
-    $btn.appendChild($img);
-    $btn.appendChild($title);
-    $btn.addEventListener("click", function () {
-      listenSong(item.img);
+  let $withoutListMain = document.querySelector(".withoutListMain");
+  if(list.length > 0){
+    $withoutListMain.style.display = "none"
+    list.map((item) => {
+      let $btn = document.createElement("BUTTON");
+      $btn.classList.add("itemList");
+      let $img = document.createElement("DIV");
+      $img.classList.add("img");
+      $img.style.backgroundImage = `url(${item.img})`;
+      let $title = document.createElement("DIV");
+      $title.classList.add("title");
+      let $h2 = document.createElement("H2");
+      $h2.classList.add("titleSong");
+      let $p = document.createElement("P");
+      $p.classList.add("singer");
+      let nameSong = document.createTextNode(item.title);
+      let singer = document.createTextNode(item.singer);
+      $h2.appendChild(nameSong);
+      $p.appendChild(singer);
+      $title.appendChild($h2);
+      $title.appendChild($p);
+      $btn.appendChild($img);
+      $btn.appendChild($title);
+      $btn.addEventListener("click", function () {
+        listenSong(item.img);
+      });
+      $containerList.appendChild($btn);
     });
-    $containerList.appendChild($btn);
-  });
+  }else{
+    $withoutListMain.style.display = "block"
+  }
 }
 
 function listenSong(img) {
