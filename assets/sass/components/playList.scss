@@ -87,6 +87,21 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
+    .withoutListMain{
+      color: $bg-secondary;
+      text-align: center;
+      width: 280px;
+      @include desktops {
+        margin-top: 150px;
+      }
+      i{
+        font-size: 70px;
+      }
+      h2{
+        margin: 10px 0 0;
+        width: auto;
+      }
+    }
     .itemList {
       @include btn(
         $w: calc((85vw - 8px) / 2),

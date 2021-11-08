@@ -391,6 +391,23 @@
     gap: 10px;
   }
 }
+.playList .containerList .withoutListMain {
+  color: #cfcfcf;
+  text-align: center;
+  width: 280px;
+}
+@media (min-width: 1024px) {
+  .playList .containerList .withoutListMain {
+    margin-top: 150px;
+  }
+}
+.playList .containerList .withoutListMain i {
+  font-size: 70px;
+}
+.playList .containerList .withoutListMain h2 {
+  margin: 10px 0 0;
+  width: auto;
+}
 .playList .containerList .itemList {
   width: calc((85vw - 8px) / 2);
   height: calc((85vw - 8px) / 2 + 50px);
