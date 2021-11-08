@@ -24,6 +24,11 @@ function toShowModal(inputShow) {
     $modal.style.transition = ".5s";
     $container.style.transform = "scale(1)";
     $container.style.transition = ".5s";
+    let $itemList = document.querySelectorAll(".itemList");
+    if ($itemList) {
+      $itemList.forEach((i) => $containerList.removeChild(i));
+    }
+    showPlayList(playList);
   }
 }
 
@@ -54,7 +59,7 @@ function handlePause() {
   $play.hidden = false;
 }
 
-let playList = [
+let playListAux = [
   {
     id: 1,
     img: "https://direct.rhapsody.com/imageserver/images/alb.61525160/600x600.jpg",
@@ -137,8 +142,6 @@ function showPlayList(list) {
   });
 }
 
-showPlayList(playList);
-
 function listenSong(img) {
   $body = document.querySelector("body");
   $body.style.backgroundImage = `url(${img})`;
@@ -146,7 +149,7 @@ function listenSong(img) {
 
 let $containerResults = document.querySelector(".containerResults");
 
-let playListModal = [];
+let playList = [];
 
 function showResults(list) {
   list.map((item) => {
@@ -178,8 +181,8 @@ function showResults(list) {
     $btn.appendChild($icon);
 
     $btn.addEventListener("click", function () {
-      playListModal.push(item);
-      showPlayListModal(playListModal);
+      playList.push(item);
+      showPlayListModal(playList);
       let empyList = document.querySelector(".withoutList");
       empyList.style.transform = "scale(0)"
         empyList.style.transition = ".5s"
@@ -198,7 +201,7 @@ let $noResults = document.querySelector(".noResults");
 
 function findSong(toSearch) {
   toSearch = toSearch.toLowerCase();
-  return playList.filter((i) => i.singer.toLowerCase().includes(toSearch));
+  return playListAux.filter((i) => i.singer.toLowerCase().includes(toSearch));
 }
 
 $input.addEventListener("keyup", (e) => {
@@ -291,16 +294,16 @@ function showPlayListModal(list) {
 
     $btn.appendChild($icon);
     $btn.addEventListener("click", function () {
-      playListModal.splice(i, 1);
+      playList.splice(i, 1);
       let empyList = document.querySelector(".withoutList");
-      if (playListModal.length === 0) {
+      if (playList.length === 0) {
         empyList.style.transform = "scale(1)"
         empyList.style.transition = ".5s"
       } else {
         empyList.style.transform = "scale(0)"
         empyList.style.transition = ".5s"
       }
-      showPlayListModal(playListModal);
+      showPlayListModal(playList);
     });
 
     $div.appendChild($img);
