@@ -313,10 +313,10 @@
           align-items: center;
           gap: 10px;
           width: 100%;
-          margin: 40px 0 0;
+          margin: 20px 0 0;
           color: $bg-secondary;
           @include tablets{
-            margin: 10px 0;
+            margin: 10px 0 0;
           }
           @include desktops{
             margin: 90px 0;

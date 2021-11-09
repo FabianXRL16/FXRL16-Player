@@ -984,12 +984,12 @@
   align-items: center;
   gap: 10px;
   width: 100%;
-  margin: 40px 0 0;
+  margin: 20px 0 0;
   color: #cfcfcf;
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .modal .containerModal .containerPlayList .containerSongs .withoutList {
-    margin: 10px 0;
+    margin: 10px 0 0;
   }
 }
 @media (min-width: 1024px) {
