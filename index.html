@@ -51,7 +51,7 @@
     <div class="playList">
       <div class="searchTitle">
         <h1>Discover</h1>
-        <button onclick="toShowModal(true)">
+        <button id="btnOpenModal">
           <i class="fas fa-ellipsis-v"></i>
         </button>
       </div>
@@ -67,7 +67,7 @@
     <div class="containerModal">
       <div class="containerSearch">
         <input id="input" type="text" placeholder="Search song ...." />
-        <button class="btnSearch" onclick="search()"><span>Search</span> <i class="fas fa-search"></i></button>
+        <button class="btnSearch" id="btnSearch"><span>Search</span> <i class="fas fa-search"></i></button>
         <button id="closed" class="btnClosed"><i class="fas fa-times"></i></button>
       </div>
       <div class="containerResults" id="containerResults">
@@ -95,7 +95,7 @@
   </div>
 
   <!-- <script type="module" src="./assets/js/api.js"></script> -->
-  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/app.js" type="module"></script>
 </body>
 
 </html>
