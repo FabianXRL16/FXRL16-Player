@@ -2,9 +2,25 @@
 
 // console.log(init)
 
-let $modal = document.querySelector("#modal");
-let $container = document.querySelector("#container");
-let $closed = document.querySelector("#closed");
+import {
+  $modal,
+  $container,
+  $closed,
+  $btnOpenModal,
+  $btnSearch,
+  $video,
+  $play,
+  $pause,
+  $input,
+  $default,
+  $noResults,
+  $containerList,
+  $containerResults,
+  $containerSongs,
+  results,
+  playList,
+  playListAux,
+} from "./const.js";
 
 function toShowModal(inputShow) {
   if (inputShow) {
@@ -32,6 +48,14 @@ function toShowModal(inputShow) {
   }
 }
 
+$btnOpenModal.addEventListener("click", function () {
+  toShowModal(true);
+});
+
+$btnSearch.addEventListener("click", function () {
+  search()
+});
+
 $closed.addEventListener(
   "click",
   function () {
@@ -39,10 +63,6 @@ $closed.addEventListener(
   },
   false
 );
-
-let $video = document.querySelector("video");
-let $play = document.querySelector("#play");
-let $pause = document.querySelector("#pause");
 
 $play.addEventListener("click", handlePlay);
 $pause.addEventListener("click", handlePause);
@@ -58,61 +78,6 @@ function handlePause() {
   $pause.hidden = true;
   $play.hidden = false;
 }
-
-let playListAux = [
-  {
-    id: 1,
-    img: "https://direct.rhapsody.com/imageserver/images/alb.61525160/600x600.jpg",
-    title: "One More Night",
-    singer: "Maroon 5",
-  },
-
-  {
-    id: 2,
-    img: "https://static.qobuz.com/images/covers/ra/gu/w4jwafymtgura_600.jpg",
-    title: "Stay",
-    singer: "Justin Bieber & The Kid Laroi",
-  },
-  {
-    id: 3,
-    img: "https://los40es00.epimg.net/los40/imagenes/2019/02/28/musica/1551370175_698722_1551370391_noticia_normal.jpg",
-    title: "Sucker",
-    singer: "Jonas Brothers",
-  },
-  {
-    id: 4,
-    img: "https://lastfm.freetls.fastly.net/i/u/300x300/c63984cd7a6f404bc0f4e1c3bc17e0c7.jpg",
-    title: "Hasta la manyana",
-    singer: "Elefante",
-  },
-  {
-    id: 5,
-    img: "https://direct.rhapsody.com/imageserver/images/alb.61525160/600x600.jpg",
-    title: "One More Night",
-    singer: "Maroon 5",
-  },
-
-  {
-    id: 6,
-    img: "https://static.qobuz.com/images/covers/ra/gu/w4jwafymtgura_600.jpg",
-    title: "Stay",
-    singer: "Justin Bieber & The Kid Laroi",
-  },
-  {
-    id: 7,
-    img: "https://los40es00.epimg.net/los40/imagenes/2019/02/28/musica/1551370175_698722_1551370391_noticia_normal.jpg",
-    title: "Sucker",
-    singer: "Jonas Brothers",
-  },
-  {
-    id: 8,
-    img: "https://lastfm.freetls.fastly.net/i/u/300x300/c63984cd7a6f404bc0f4e1c3bc17e0c7.jpg",
-    title: "Hasta la manyana",
-    singer: "Elefante",
-  },
-];
-
-let $containerList = document.querySelector(".containerList");
 
 function showPlayList(list) {
   let $withoutListMain = document.querySelector(".withoutListMain");
@@ -152,10 +117,6 @@ function listenSong(img) {
   $body = document.querySelector("body");
   $body.style.backgroundImage = `url(${img})`;
 }
-
-let $containerResults = document.querySelector(".containerResults");
-
-let playList = [];
 
 function showResults(list) {
   list.map((item) => {
@@ -201,10 +162,6 @@ function showResults(list) {
   });
 }
 
-let $input = document.querySelector("#input");
-let $default = document.querySelector(".default");
-let $noResults = document.querySelector(".noResults");
-
 function findSong(toSearch) {
   toSearch = toSearch.toLowerCase();
   return playListAux.filter((i) => i.singer.toLowerCase().includes(toSearch));
@@ -215,8 +172,6 @@ $input.addEventListener("keyup", (e) => {
     search();
   }
 });
-
-let results = [];
 
 function search() {
   try {
@@ -233,7 +188,7 @@ function search() {
       if (results.length === 0) {
         $noResults.style.display = "block";
       } else {
-        showResults(results);
+        showResults(results);  
       }
     }
   } catch (error) {
@@ -262,8 +217,6 @@ function noResult() {
   $item.appendChild($p);
   $containerResults.appendChild($item);
 }
-
-let $containerSongs = document.querySelector(".containerSongs");
 
 function showPlayListModal(list) {
   let $itemSong = document.querySelectorAll(".itemSong");
@@ -320,5 +273,23 @@ function showPlayListModal(list) {
 }
 
 function resetPlayList() {
-  playList = []
+  playList = [];
 }
+
+function convertBin(num){
+  num = num.toString()
+  let uno = []
+  let cero = []
+  for(let i = 0; i< num.length; i++){
+    if(num[i]==='1'){
+      uno.push(1)
+    }else{
+      cero.push(0)
+    }
+  }
+  let resp = uno+cero
+  console.log(typeof(resp))
+  return resp.replace(",","")
+}
+
+console.log(convertBin(1110010100))
